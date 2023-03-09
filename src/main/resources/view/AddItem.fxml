@@ -17,7 +17,7 @@
                   <Image url="@../img/Untitled%20design%20(11).png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="addimgbtn" layoutX="197.0" layoutY="201.0" onAction="#addItemsOnAction" prefHeight="34.0" prefWidth="105.0" text="Add Image" />
+            <JFXButton fx:id="addition" layoutX="197.0" layoutY="201.0" onAction="#addItemsOnAction" prefHeight="34.0" prefWidth="105.0" text="Add Image" />
             <JFXTextField fx:id="itemName" alignment="CENTER" layoutX="99.0" layoutY="260.0" prefHeight="31.0" prefWidth="301.0" promptText="Item name" />
             <JFXTextField fx:id="itemPrice" alignment="CENTER" layoutX="99.0" layoutY="329.0" prefHeight="31.0" prefWidth="301.0" promptText="LKR" />
             <JFXTextField fx:id="itemQTY" alignment="CENTER" layoutX="99.0" layoutY="407.0" prefHeight="31.0" prefWidth="301.0" promptText="QTY" />
