@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadFormContext" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashier.CashierDashboardController">
+   <children>
+      <AnchorPane fx:id="b" prefHeight="79.0" prefWidth="1921.0">
+         <children>
+            <JFXButton fx:id="addItemBtn" layoutX="1545.0" layoutY="14.0" onAction="#addItemOn" text="Add Item" underline="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="settingBtn" layoutX="1749.0" layoutY="14.0" text="Setting" underline="true" />
+            <Line endX="996.9998779296875" endY="3.0" layoutX="924.0" layoutY="75.0" startX="-924.0" startY="3.0" />
+         </children></AnchorPane>
+      <TabPane layoutY="79.0" prefHeight="1002.0" prefWidth="1129.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="NAME">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField layoutX="14.0" layoutY="14.0" prefHeight="41.0" prefWidth="912.0" promptText="search" />
+                        <JFXButton fx:id="searchOnBtn" layoutX="954.0" layoutY="13.0" onAction="#searchOn" prefHeight="41.0" prefWidth="41.0" text="..">
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/icons8-magnifying-glass-tilted-right-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="CUSTOM GRID">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane fx:id="pay" layoutX="1169.0" layoutY="944.0" prefHeight="60.0" prefWidth="594.0">
+         <children>
+            <Label layoutX="22.0" layoutY="14.0" text="Pay" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="75.0" layoutY="7.0" prefHeight="46.0" prefWidth="497.0" text="LKR 00,000.00" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Line endX="71.0" endY="668.0" layoutX="1058.0" layoutY="413.0" startX="71.0" startY="-333.0" />
+      <TableView fx:id="table" layoutX="1130.0" layoutY="79.0" prefHeight="752.0" prefWidth="792.0">
+        <columns>
+          <TableColumn prefWidth="277.333251953125" text="name" />
+          <TableColumn prefWidth="106.3333740234375" text="qty" />
+            <TableColumn prefWidth="408.6666259765625" text="RS" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="1171.0" layoutY="846.0" prefHeight="60.0" prefWidth="704.0">
+         <children>
+            <Line endX="574.5" endY="5.0" layoutX="138.0" layoutY="76.0" startX="-138.0" startY="5.0" />
+            <Label layoutX="20.0" layoutY="20.0" prefHeight="40.0" prefWidth="168.0" text="Bill Amount" />
+            <Label alignment="CENTER_RIGHT" layoutX="201.0" layoutY="18.0" prefHeight="40.0" prefWidth="506.0" text="LKR 0.00" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="hold" alignment="CENTER" layoutX="1763.0" layoutY="944.0" prefHeight="60.0" prefWidth="126.0" text="HOLD" />
+   </children>
+   <stylesheets>
+      <URL value="@../../style/DashBoard.css" />
+   </stylesheets>
+</AnchorPane>
