@@ -18,7 +18,6 @@ public class AddItemController {
     public JFXTextField itemPrice;
     public JFXTextField itemQTY;
 
-
     public void addItemsOnAction(ActionEvent actionEvent) {
         FileChooser chooser=new FileChooser();
         FileChooser.ExtensionFilter extensionFilterJPG =new FileChooser.ExtensionFilter("JPG files(*.jpg)","*.JPG");
