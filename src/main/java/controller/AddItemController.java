@@ -1,16 +1,13 @@
 package controller;
 
 import com.jfoenix.controls.JFXTextField;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class AddItemController {
     public ImageView imgAdd;
@@ -19,7 +16,7 @@ public class AddItemController {
     public JFXTextField itemQTY;
 
     public void addItemsOnAction(ActionEvent actionEvent) {
-        FileChooser chooser=new FileChooser();
+       /* FileChooser chooser=new FileChooser();
         FileChooser.ExtensionFilter extensionFilterJPG =new FileChooser.ExtensionFilter("JPG files(*.jpg)","*.JPG");
         FileChooser.ExtensionFilter extensionFilterPNG =new FileChooser.ExtensionFilter("PNG files(*.png)","*.PNG");
 
@@ -32,7 +29,7 @@ public class AddItemController {
             imgAdd.setImage(image);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
     public void itemSaveBtn(ActionEvent actionEvent) throws SQLException {

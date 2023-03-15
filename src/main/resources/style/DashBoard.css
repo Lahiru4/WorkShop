@@ -1,0 +1,18 @@
+#homebtn {
+    -fx-background-radius: 25;
+}
+#homebtn :hover {
+    -fx-background-color: red;
+}
+#pay {
+    -fx-background-color: rgba(50, 50, 210, 0.42);
+    -fx-background-radius: 10;
+}
+#blc {
+    -fx-border-color: black;
+    -fx-border-radius: 10;
+}
+#hold {
+    -fx-background-color: rgba(211, 21, 21, 0.54);
+    -fx-background-radius: 10;
+}
