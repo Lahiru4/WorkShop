@@ -1,18 +1,139 @@
-#homebtn {
+
+#homebtn ,#options{
     -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-border-color: #2D2727;
 }
 #homebtn :hover {
     -fx-background-color: red;
 }
+#dash {
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-width: 5;
+    -fx-border-color: rgb(143, 67, 238);
+}
 #pay {
-    -fx-background-color: rgba(50, 50, 210, 0.42);
+    -fx-background-color: rgb(143, 67, 238);
     -fx-background-radius: 10;
 }
 #blc {
-    -fx-border-color: black;
+    -fx-border-color: #2D2727;
     -fx-border-radius: 10;
 }
 #hold {
-    -fx-background-color: rgba(211, 21, 21, 0.54);
+    -fx-background-color: rgb(240, 235, 141);
     -fx-background-radius: 10;
+}
+
+#loadFormContext {
+    -fx-background-color: #ffffff;
+}
+#dashBoard {
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-color: #77777a;
+    -fx-border-width: 4;
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+}
+#sallesCartA {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-background-radius: 10;
+}
+.label2 {
+    -fx-font-weight: bold;
+    -fx-font-size: 30;
+}
+.display {
+    -fx-font-size: 45;
+    -fx-font-style: Regular;
+}
+
+#date {
+    -fx-font-size: 18;
+}
+.combo-box {
+    -fx-border-color: black;
+    -fx-border-radius: 5;
+    -fx-background-color: #ffffff;
+    -fx-font-size: 15.2;
+}
+#line,#line2,#salesdash {
+    -fx-border-color: black;
+    -fx-background-color: #ffffff;
+    /*-fx-border-radius: 20;*/
+}
+#timeGobtn {
+    -fx-background-color: rgb(85, 224, 99);
+    -fx-background-radius: 20;
+}
+#man {
+    -fx-background-color: #ffffff;
+}
+#salesdash {
+    -fx-border-color: black;
+}
+.scroll-bar{
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical .track{-fx-background-color: transparent;}
+.scroll-bar:horizontal .track{-fx-background-color: transparent;}
+
+.scroll-bar:horizontal .thumb{-fx-background-color: transparent;}
+.scroll-bar:vertical .thumb{-fx-background-color: transparent;}
+
+.scroll-bar:vertical .corner{-fx-background-color: transparent;}
+
+.scroll-bar:vertical *.increment-button,
+.scroll-bar:vertical *.decrement-button{-fx-background-color: transparent;}
+
+.scroll-bar:horizontal *.increment-button,
+.scroll-bar:horizontal *.decrement-button{-fx-background-color: transparent;}
+
+.scroll-bar:vertical *.increment-arrow,
+.scroll-bar:vertical *.decrement-arrow{-fx-background-color: transparent;}
+
+.scroll-bar:horizontal *.increment-arrow,
+.scroll-bar:horizontal *.decrement-arrow{-fx-background-color: transparent;}
+
+.scroll-pane .corner{-fx-background-color: transparent;}
+
+.scroll-pane{
+    /*-fx-border-width: 2;
+    -fx-border-color: black;
+    -fx-border-radius: 20;*/
+    -fx-background-color: transparent;
+}
+#emplbl {
+    -fx-background-color: linear-gradient(to bottom left,#fad390,#eb4d4b);    -fx-background-radius: 20;
+}
+#Saleslbl {
+    -fx-background-color: linear-gradient(to bottom left,#34e7e4, rgb(11, 232, 129));-fx-background-radius: 20;
+
+}
+#orderlbl {
+    -fx-background-color: linear-gradient(to bottom left,#FFC312,#cc8e35);    -fx-background-radius: 20;
+
+}
+
+#sals {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25;
+}
+#timecombobox {
+    -fx-background-color: #ffffff;
+    -fx-font-size: 15;
+    -fx-border-color: #ffffff;
+}
+#sideBarChat,#rlbl {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25;
+}
+#employshed,#rhedar,#salhedlbl {
+    -fx-background-color: linear-gradient(to bottom, rgba(52, 246, 217, 0.59) 0%, #ccccff 80%);
+    -fx-background-radius: 25 25 0 0;
+}
+.radio-button {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
 }

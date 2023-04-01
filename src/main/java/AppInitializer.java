@@ -1,7 +1,8 @@
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import util.ViewFactory;
+import util.types.SceneTypes;
 
 import java.io.IOException;
 
@@ -13,10 +14,9 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/LogingPage.fxml"))));
-        /*primaryStage.getIcons().add(new Image("img/icons8-work-50.png"));*/
+        primaryStage.setScene(ViewFactory.getInstance().getScene(SceneTypes.LOGIN_PAGE));
+        primaryStage.getIcons().add(new Image("img/icons8-shop-94.png"));
         primaryStage.centerOnScreen();
         primaryStage.show();
-
     }
 }

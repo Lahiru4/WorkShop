@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1020.0" prefWidth="1710.0" stylesheets="@../style/DashBoard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardFromController">
+   <content>
+      <AnchorPane fx:id="mandash" prefHeight="4000.0" prefWidth="1690.0" stylesheets="@../style/DashBoard.css">
+         <children>
+            <AnchorPane fx:id="emplbl" layoutX="73.0" layoutY="434.0" prefHeight="140.0" prefWidth="455.0" styleClass="btn-grad">
+               <children>
+                  <Label layoutX="31.0" layoutY="17.0" styleClass="label2" text="Running Project" />
+                  <Label alignment="CENTER" layoutX="31.0" layoutY="73.0" prefHeight="45.0" prefWidth="335.0" styleClass="label2" text="00" textFill="#3f497f" />
+                  <ImageView blendMode="MULTIPLY" fitHeight="50.0" fitWidth="40.0" layoutX="383.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-hourglass%20(1).gif" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow color="#615b5b" />
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="Saleslbl" layoutX="627.0" layoutY="434.0" prefHeight="140.0" prefWidth="455.0" styleClass="context-grad">
+               <children>
+                  <Label layoutX="45.0" layoutY="12.0" styleClass="label2" text="Completed Projects" />
+                  <Label alignment="CENTER" layoutX="45.0" layoutY="73.0" prefHeight="45.0" prefWidth="389.0" styleClass="label2" text="00" textFill="#3f497f" />
+                  <ImageView blendMode="DARKEN" fitHeight="50.0" fitWidth="40.0" layoutX="393.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-checkmark.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow color="#615b5b" />
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="orderlbl" layoutX="1182.0" layoutY="434.0" prefHeight="140.0" prefWidth="455.0">
+               <children>
+                  <Label layoutX="36.0" layoutY="17.0" prefHeight="45.0" prefWidth="244.0" styleClass="label2" text="Full Daily Profit" />
+                  <Label alignment="CENTER" layoutX="36.0" layoutY="68.0" prefHeight="45.0" prefWidth="389.0" styleClass="label2" text="00" textFill="#3f497f" />
+                  <ImageView blendMode="DARKEN" fitHeight="50.0" fitWidth="50.0" layoutX="391.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-exchange.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow color="#615b5b" />
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="sals" layoutX="73.0" layoutY="679.0" prefHeight="565.0" prefWidth="455.0">
+               <effect>
+                  <DropShadow color="#a19e9e" />
+               </effect>
+               <children>
+                  <LineChart fx:id="lineChartSalles" layoutX="4.0" layoutY="138.0" prefHeight="412.0" prefWidth="414.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+                  <AnchorPane fx:id="salhedlbl" prefHeight="69.0" prefWidth="455.0">
+                     <children>
+                        <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="198.0" styleClass="label2" text="Today Sales " />
+                     </children>
+                  </AnchorPane>
+                  <JFXTextField editable="false" focusColor="#3f497f" layoutX="14.0" layoutY="85.0" prefHeight="44.0" prefWidth="402.0" text="RS." unFocusColor="BLACK">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="rlbl" layoutX="577.0" layoutY="2134.0" prefHeight="869.0" prefWidth="1060.0">
+               <children>
+                  <AnchorPane fx:id="rhedar" layoutX="1.0" prefHeight="69.0" prefWidth="1064.0">
+                     <children>
+                        <Label layoutX="37.0" layoutY="14.0" styleClass="label2" text="Project" />
+                        <JFXComboBox layoutX="353.0" layoutY="17.0" prefHeight="37.0" prefWidth="244.0" />
+                        <JFXRadioButton layoutX="698.0" layoutY="26.0" text="All">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="project" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton layoutX="763.0" layoutY="24.0" text="Completed" toggleGroup="$project" />
+                        <JFXRadioButton layoutX="887.0" layoutY="25.0" text="Running" toggleGroup="$project" />
+                     </children>
+                  </AnchorPane>
+                  <BarChart layoutX="22.0" layoutY="85.0" prefHeight="756.0" prefWidth="1014.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+               <effect>
+                  <DropShadow color="#756e6e" />
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="sideBarChat" layoutX="70.0" layoutY="1380.0" prefHeight="601.0" prefWidth="859.0">
+               <effect>
+                  <DropShadow color="#a19e9e" />
+               </effect>
+               <children>
+                  <BarChart layoutX="27.0" layoutY="101.0" prefHeight="480.0" prefWidth="806.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <AnchorPane fx:id="employshed" layoutX="1.0" layoutY="-1.0" prefHeight="69.0" prefWidth="862.0">
+                     <children>
+                        <Label layoutX="47.0" layoutY="13.0" styleClass="label2" text=" Employee Worked" />
+                        <JFXComboBox layoutX="423.0" layoutY="17.0" prefHeight="37.0" prefWidth="304.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label fx:id="display" alignment="CENTER" layoutX="608.0" layoutY="178.0" prefHeight="61.0" prefWidth="488.0" styleClass="display" text="Displaying data on">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="469.0" layoutY="89.0" prefHeight="45.0" prefWidth="854.0" styleClass="label2" text="Hi (shop name),here's ehat'happeing in your stores" />
+            <Label layoutX="779.0" layoutY="267.0" styleClass="label2" text="2022.03.12" textFill="#3f497f">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="sals" layoutX="629.0" layoutY="679.0" prefHeight="565.0" prefWidth="455.0">
+               <effect>
+                  <DropShadow color="#a19e9e" />
+               </effect>
+               <children>
+                  <LineChart fx:id="lineChartSalles1" layoutX="4.0" layoutY="138.0" prefHeight="412.0" prefWidth="414.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+                  <AnchorPane fx:id="salhedlbl" prefHeight="69.0" prefWidth="455.0">
+                     <children>
+                        <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="300.0" styleClass="label2" text="Cost of Good Sold" />
+                     </children>
+                  </AnchorPane>
+                  <JFXTextField editable="false" focusColor="#3f497f" layoutX="14.0" layoutY="85.0" prefHeight="44.0" prefWidth="402.0" text="RS." unFocusColor="BLACK">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="sals" layoutX="1182.0" layoutY="679.0" prefHeight="565.0" prefWidth="455.0">
+               <effect>
+                  <DropShadow color="#a19e9e" />
+               </effect>
+               <children>
+                  <LineChart fx:id="lineChartSalles11" layoutX="4.0" layoutY="138.0" prefHeight="412.0" prefWidth="414.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+                  <AnchorPane fx:id="salhedlbl" prefHeight="69.0" prefWidth="455.0">
+                     <children>
+                        <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="198.0" styleClass="label2" text="Gross Profit" />
+                     </children>
+                  </AnchorPane>
+                  <JFXTextField editable="false" focusColor="#3f497f" layoutX="14.0" layoutY="85.0" prefHeight="44.0" prefWidth="402.0" text="RS." unFocusColor="BLACK">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="sideBarChat" layoutX="996.0" layoutY="1380.0" prefHeight="601.0" prefWidth="645.0">
+               <effect>
+                  <DropShadow color="#a19e9e" />
+               </effect>
+               <children>
+                  <BarChart layoutX="27.0" layoutY="105.0" prefHeight="476.0" prefWidth="586.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <AnchorPane fx:id="employshed" layoutX="-2.0" layoutY="-1.0" prefHeight="69.0" prefWidth="649.0">
+                     <children>
+                        <Label layoutX="47.0" layoutY="13.0" styleClass="label2" text="O.T Hour " />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <TableView layoutX="72.0" layoutY="2135.0" prefHeight="872.0" prefWidth="463.0">
+               <columns>
+                  <TableColumn prefWidth="462.0" text="C1" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

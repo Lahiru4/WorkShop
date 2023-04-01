@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import java.net.URL?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -12,46 +12,64 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loadFormContext" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashier.CashierDashboardController">
-   <stylesheets>
-      <URL value="@../../style/DashBoard.css" />
-   </stylesheets>
+<AnchorPane fx:id="loadFormContext" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../style/DashBoard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashier.CashierDashboardController">
    <children>
-      <JFXButton fx:id="homebtn" contentDisplay="TOP" layoutX="30.0" layoutY="113.0" prefHeight="101.0" prefWidth="119.0" text="Home">
+      <JFXButton fx:id="homebtn" buttonType="RAISED" contentDisplay="TOP" ellipsisString="" layoutX="32.0" layoutY="54.0" prefHeight="90.0" prefWidth="90.0" text="Sales">
          <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../img/icons8-online-store-30.png" />
+                  <Image url="@../../img/icons8-shop-94.png" />
                </image>
             </ImageView>
          </graphic>
-      </JFXButton>
-      <TextField layoutX="201.0" layoutY="117.0" prefHeight="40.0" prefWidth="651.0" promptText="Search" />
-      <TableView layoutX="201.0" layoutY="186.0" prefHeight="828.0" prefWidth="930.0">
-        <columns>
-          <TableColumn prefWidth="273.0" text="Img" />
-          <TableColumn minWidth="0.0" prefWidth="341.0" text="Name" />
-        </columns>
-      </TableView>
-      <TableView layoutX="1239.0" layoutY="186.0" prefHeight="648.0" prefWidth="590.0" stylesheets="@../../style/Table.css">
-        <columns>
-          <TableColumn prefWidth="208.0" text="Item Name" />
-          <TableColumn prefWidth="210.0" text="QTY" />
-        </columns>
-      </TableView>
-      <AnchorPane fx:id="pay" layoutX="1242.0" layoutY="941.0" onMouseClicked="#payOn" prefHeight="65.0" prefWidth="475.0">
-         <children>
-            <Label layoutX="13.0" layoutY="2.0" prefHeight="60.0" prefWidth="144.0" text="PAY">
-               <font>
-                  <Font name="System Bold" size="28.0" />
-               </font>
-            </Label>
-         </children></AnchorPane>
-      <AnchorPane fx:id="blc" layoutX="1242.0" layoutY="854.0" prefHeight="65.0" prefWidth="445.0" />
-      <Button fx:id="hold" layoutX="1719.0" layoutY="941.0" mnemonicParsing="false" onAction="#holdOn" prefHeight="65.0" prefWidth="110.0" text="HOLD">
          <font>
-            <Font size="17.0" />
+            <Font size="15.0" />
          </font>
-      </Button>
+      </JFXButton>
+      <JFXButton fx:id="options" buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="243.0" prefHeight="90.0" prefWidth="90.0" text="Options">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-slider-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font></JFXButton>
+      <AnchorPane fx:id="hed" layoutX="150.0" prefHeight="1076.0" prefWidth="1768.0" stylesheets="@../../style/Cashier.css">
+         <children>
+            <AnchorPane fx:id="dash" layoutX="7.0" layoutY="34.0" prefHeight="998.0" prefWidth="1116.0" />
+            <JFXComboBox layoutX="36.0" layoutY="102.0" prefHeight="31.0" prefWidth="295.0" />
+            <TableView layoutX="1140.0" layoutY="69.0" prefHeight="782.0" prefWidth="590.0" stylesheets="@../../style/Table.css">
+              <columns>
+                <TableColumn prefWidth="208.0" text="Item Name" />
+                <TableColumn prefWidth="210.0" text="QTY" />
+              </columns>
+            </TableView>
+            <AnchorPane fx:id="blc" layoutX="1144.0" layoutY="883.0" prefHeight="60.0" prefWidth="445.0" />
+            <AnchorPane fx:id="pay" layoutX="1143.0" layoutY="956.0" prefHeight="50.0" prefWidth="475.0">
+               <children>
+                  <Label layoutX="19.0" layoutY="2.0" prefHeight="60.0" prefWidth="144.0" text="PAY">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="hold" layoutX="1636.0" layoutY="965.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="HOLD">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <TextField layoutX="37.0" layoutY="54.0" prefHeight="40.0" prefWidth="651.0" promptText="Search" />
+            <TableView layoutX="37.0" layoutY="158.0" prefHeight="858.0" prefWidth="528.0">
+              <columns>
+                <TableColumn prefWidth="262.5" />
+                <TableColumn prefWidth="262.5" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

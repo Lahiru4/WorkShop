@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="logInFormContext" prefHeight="527.0" prefWidth="933.0" stylesheets="@../../style/LohinFrom.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogingPageController">
+<AnchorPane fx:id="loadFormContext" prefHeight="553.0" prefWidth="977.0" stylesheets="@../style/LoginFrom.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogingPageController">
    <children>
-      <ImageView fitHeight="696.0" fitWidth="933.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="558.0" fitWidth="977.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../img/WORK%20SHOP%20(1).png" />
+            <Image url="@../img/workshoplogimg.png" />
          </image>
       </ImageView>
-      <JFXTextField layoutX="98.0" layoutY="276.0" prefHeight="44.0" prefWidth="310.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXTextField>
-      <JFXButton fx:id="adminGoBtn" layoutX="419.0" layoutY="282.0" onAction="#adminDashboardGoOn" prefHeight="39.0" prefWidth="81.0" text="Login">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="98.0" layoutY="366.0" prefHeight="64.0" prefWidth="224.0" text="Go to Manage account" textFill="#0189dd">
+      <JFXButton fx:id="cashierloginBtn" layoutX="419.0" layoutY="300.0" onAction="#cashierloginBtnOnAction" prefHeight="32.0" prefWidth="81.0" text="Login" />
+      <Label layoutX="98.0" layoutY="366.0" prefHeight="52.0" prefWidth="284.0" text="To login to another account" textFill="#0189dd">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="98.0" layoutY="232.0" prefHeight="44.0" prefWidth="204.0" text="Pleace enter  your ID">
+      <Label layoutX="98.0" layoutY="234.0" prefHeight="44.0" prefWidth="310.0" text="Please enter your cashier ID">
          <font>
-            <Font size="18.0" />
+            <Font size="22.0" />
          </font>
       </Label>
-      <JFXButton fx:id="manageLoginBtn" layoutX="98.0" layoutY="428.0" prefHeight="32.0" prefWidth="81.0" text="GO" />
-      <Label layoutX="669.0" layoutY="33.0" prefHeight="21.0" prefWidth="152.0" text="Login Admin Account" />
+      <JFXButton fx:id="manageLoginBtn" layoutX="98.0" layoutY="425.0" onAction="#gobtnOnAction" prefHeight="32.0" prefWidth="81.0" text="GO" />
+      <JFXPasswordField layoutX="98.0" layoutY="294.0" prefHeight="44.0" prefWidth="310.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXPasswordField>
    </children>
 </AnchorPane>

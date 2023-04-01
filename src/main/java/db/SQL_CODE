@@ -1,0 +1,55 @@
+drop database workshop;
+create database workshop;
+use workshop;
+CREATE TABLE Items(
+	code VARCHAR(50) PRIMARY KEY,
+    description VARCHAR(100),
+    qty INT,
+    selling_price DECIMAL(8,2),
+    Purchase_price DECIMAL(8,2)
+);
+CREATE TABLE customer (
+	Id VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(100),
+    number VARCHAR(10),
+    address VARCHAR(100),
+    gmail VARCHAR(100)
+);
+CREATE TABLE Orders (
+	Id VARCHAR(50) PRIMARY KEY,
+	description VARCHAR(200),
+    order_date DATE,
+    return_date DATE,
+    work_rent DECIMAL(8,2),
+    customer_Id VARCHAR(50),
+    CONSTRAINT FOREIGN KEY(customer_Id) REFERENCES customer(Id)
+);
+CREATE TABLE Quotation(
+    Id VARCHAR(50),
+    valid_from DATE,
+    to DATE,
+    total_item_cost DECIMAL(10,2),
+    total_amount DECIMAL(10,2),
+    orders_Id VARCHAR(50),
+    CONSTRAINT FOREIGN KEY(orders_Id) REFERENCES Orders(Id)
+);
+CREATE TABLE OrderDetails (
+    order_Id VARCHAR(50),
+	item_code VARCHAR(50),
+	CONSTRAINT PRIMARY KEY (order_Id,item_code),
+	CONSTRAINT FOREIGN KEY (order_Id) REFERENCES Orders(Id) on Delete Cascade on Update Cascade,
+    CONSTRAINT FOREIGN KEY (item_code) REFERENCES Items(code) on Delete Cascade on Update Cascade
+);
+CREATE TABLE Employee(
+    employee_id VARCHAR(50)PRIMARY KEY,
+    gmail VARCHAR(50),
+    phone_number VARCHAR(10),
+    id_number INT,
+    register_date DATE,
+    position ENUM('Admin','Cashier','Manager','Worker')
+);
+CREATE TABLE Admin(
+    Gmail VARCHAR(50)PRIMARY KEY,
+    password VARCHAR(50)
+);
+

@@ -1,0 +1,5 @@
+package util.types;
+
+public enum ControllerTypes {
+    ADMIN_DASHBOARD,ADMIN_LOGIN_PAGE,CASHIER_DASHBOARD,LOGIN_PAGE,ADD_ORDER,Question_PAGE,CUSTOMER_DASHBOARD
+}
