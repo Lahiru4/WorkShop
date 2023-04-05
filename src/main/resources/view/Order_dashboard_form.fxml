@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="oderDashboard" prefHeight="1020.0" prefWidth="1710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderdashboardformController">
    <children>
-      <TableView fx:id="orderTable" layoutX="71.0" layoutY="444.0" prefHeight="521.0" prefWidth="1302.0">
+      <TableView fx:id="orderTable" layoutX="63.0" layoutY="206.0" prefHeight="741.0" prefWidth="1302.0">
          <columns>
             <TableColumn fx:id="orderID" prefWidth="139.0" text="Oder ID" />
             <TableColumn fx:id="cusID" prefWidth="176.0" text="Customer ID" />
@@ -37,13 +37,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <TextField layoutX="74.0" layoutY="359.0" prefHeight="37.0" prefWidth="613.0" promptText="Search">
+      <TextField layoutX="64.0" layoutY="123.0" prefHeight="44.0" prefWidth="649.0" promptText="Search">
          <font>
-            <Font size="15.0" />
+            <Font size="20.0" />
          </font>
       </TextField>
-      <JFXComboBox fx:id="search" layoutX="885.0" layoutY="365.0" prefHeight="31.0" prefWidth="204.0" />
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="745.0" layoutY="361.0">
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="720.0" layoutY="125.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -64,13 +63,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXComboBox fx:id="showfiltas" layoutX="1125.0" layoutY="367.0" prefHeight="31.0" prefWidth="166.0" />
-      <Label alignment="CENTER" layoutX="1241.0" layoutY="6.0" prefHeight="111.0" prefWidth="460.0" text="Order Dashboard" textFill="#f7c04a">
+      <Label layoutX="40.0" prefHeight="111.0" prefWidth="460.0" text="Order Manage From" textFill="#f7c04a">
          <font>
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="805.0" layoutY="360.0" prefHeight="30.0" prefWidth="30.0">
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="796.0" layoutY="125.0" prefHeight="30.0" prefWidth="30.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -103,6 +101,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <ComboBox fx:id="filtarId" layoutX="903.0" layoutY="123.0" prefWidth="150.0" />
    </children>
    <stylesheets>
       <URL value="@../style/Customer.css" />

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1020.0" prefWidth="1710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerStockManage">
+   <children>
+      <Label layoutX="50.0" prefHeight="111.0" prefWidth="484.0" text="Stock Manage From" textFill="#f7c04a">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

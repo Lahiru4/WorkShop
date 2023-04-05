@@ -22,18 +22,25 @@
     -fx-border-width: 4;
     -fx-background-radius: 20;
 }
+#mandash {
+    -fx-background-color: #ffffff;
+}
 #back {
     -fx-border-color: #000000;
     -fx-border-radius: 20;
     -fx-border-width: 4;
     -fx-background-radius: 20;
 }
-#addoder,#quotation,#print,#mail {
+#addoder,#quotation,#print,#mail,#addCustomer,#cusPrint,#cusMail {
     -fx-border-radius: 20;
     -fx-border-width: 2;
     -fx-border-color: #ffffff;
     -fx-background-radius: 20;
     -fx-background-color: #F8F5E4;
+}
+#logOutBtn {
+    -fx-border-radius: 50;
+    -fx-border-radius: 50;
 }
 .table-view {
     -fx-background-color: transparent;
@@ -105,5 +112,10 @@
     -fx-background-color: rgb(255, 255, 255);
 }
 #leftShado {
+    -fx-background-color: #ffffff;
+}
+#cusSelectTime {
+    -fx-border-radius: 25;
+    -fx-border-color: black;
     -fx-background-color: #ffffff;
 }

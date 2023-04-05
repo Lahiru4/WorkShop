@@ -33,9 +33,7 @@ public class DashBoardFromController implements Initializable {
         series.getData().add(new XYChart.Data<>("Thursday",523));
         series.getData().add(new XYChart.Data<>("Friday",790));
         series.getData().add(new XYChart.Data<>("Saturday",820));
-
         lineChartSalles.getData().addAll(series);
         lineChartSalles.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
-
     }
 }

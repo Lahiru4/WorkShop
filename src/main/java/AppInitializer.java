@@ -11,7 +11,6 @@ public class AppInitializer extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setScene(ViewFactory.getInstance().getScene(SceneTypes.LOGIN_PAGE));

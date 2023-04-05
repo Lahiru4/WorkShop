@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="customerDashboard" prefHeight="1020.0" prefWidth="1710.0" stylesheets="@../style/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustromerManageFromController">
+<AnchorPane fx:id="customerDashboard" prefHeight="1020.0" prefWidth="1710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustromerManageFromController">
    <children>
-      <TableView layoutX="110.0" layoutY="62.0" prefHeight="842.0" prefWidth="1106.0">
+      <TableView layoutX="54.0" layoutY="234.0" prefHeight="707.0" prefWidth="1215.0">
         <columns>
           <TableColumn prefWidth="119.0" text="Customer Id" />
           <TableColumn prefWidth="137.0" text="User Name" />
             <TableColumn prefWidth="222.0" text="Modile Number" />
             <TableColumn prefWidth="300.0" text="Address" />
             <TableColumn prefWidth="297.0" text="Gmail" />
+            <TableColumn fx:id="action" prefWidth="125.0" />
         </columns>
       </TableView>
-      <JFXButton fx:id="addCustomer" layoutX="1249.0" layoutY="330.0" text="Add Customer">
+      <JFXButton fx:id="addCustomer" buttonType="RAISED" layoutX="1413.0" layoutY="494.0" prefHeight="64.0" prefWidth="222.0" text="Add Customer">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,5 +36,62 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
+      <JFXButton fx:id="cusPrint" buttonType="RAISED" layoutX="1413.0" layoutY="640.0" prefHeight="64.0" prefWidth="222.0" text="Print">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-print-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="cusMail" buttonType="RAISED" layoutX="1413.0" layoutY="800.0" prefHeight="64.0" prefWidth="222.0" text="Mail">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-send-email-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="40.0" prefHeight="111.0" prefWidth="514.0" text="Customer Manage From" textFill="#f7c04a">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <TextField layoutX="54.0" layoutY="119.0" prefHeight="25.0" prefWidth="649.0" promptText="Search">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="656.0" layoutY="122.0" text="Button">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-magnifying-glass-tilted-right-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="705.0" layoutY="121.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-rotate-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ComboBox fx:id="cusSelectTime" layoutX="754.0" layoutY="124.0" prefHeight="33.0" prefWidth="177.0" />
    </children>
+   <stylesheets>
+      <URL value="@../style/Customer.css" />
+      <URL value="@../style/AdminDashboar.css" />
+   </stylesheets>
 </AnchorPane>

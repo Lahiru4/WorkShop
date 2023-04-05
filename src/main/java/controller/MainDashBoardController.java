@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import util.ViewFactory;
+import util.types.SceneTypes;
 
 import java.io.IOException;
 
@@ -101,7 +104,6 @@ public class MainDashBoardController {
             manDash.getChildren().add(node);
         //}
 
-
         customerBtn.getStyleClass().removeAll("orderBtn2");
         customerBtn.getStyleClass().add("orderBtn");
 
@@ -126,7 +128,11 @@ public class MainDashBoardController {
 
     }
 
-    public void onReport(ActionEvent actionEvent) {
+    public void onReport(ActionEvent actionEvent) throws IOException {
+        Node node = FXMLLoader.load(getClass().getResource("/view/ReportManageFrom.fxml"));
+        manDash.getChildren().clear();
+        manDash.getChildren().addAll(node);
+
         reportBtn.getStyleClass().removeAll("orderBtn2");
         reportBtn.getStyleClass().add("orderBtn");
 
@@ -146,7 +152,10 @@ public class MainDashBoardController {
         stockBtn.getStyleClass().add("orderBtn2");
     }
 
-    public void onEmployee(ActionEvent actionEvent) {
+    public void onEmployee(ActionEvent actionEvent) throws IOException {
+        Node node = FXMLLoader.load(getClass().getResource("/view/EmployeeManagement.fxml"));
+        manDash.getChildren().clear();
+        manDash.getChildren().addAll(node);
         employeeBtn.getStyleClass().removeAll("orderBtn2");
         employeeBtn.getStyleClass().add("orderBtn");
 
@@ -165,7 +174,10 @@ public class MainDashBoardController {
         reportBtn.getStyleClass().removeAll("orderBtn");
         reportBtn.getStyleClass().add("orderBtn2");
     }
-    public void onStock(ActionEvent actionEvent) {
+    public void onStock(ActionEvent actionEvent) throws IOException {
+        Node node=FXMLLoader.load(getClass().getResource("/view/StockManage.fxml"));
+        manDash.getChildren().clear();
+        manDash.getChildren().addAll(node);
         stockBtn.getStyleClass().removeAll("orderBtn2");
         stockBtn.getStyleClass().add("orderBtn");
 
@@ -188,7 +200,14 @@ public class MainDashBoardController {
 
 
 
-    public void logOutBtnOn(ActionEvent actionEvent) {
+    public void logOutBtnOn(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) manDash.getScene().getWindow();
+        stage.close();
+        Stage stage1 = new Stage();
+        stage1.setScene(ViewFactory.getInstance().getScene(SceneTypes.LOGIN_PAGE));
+        stage1.setResizable(false);
+        stage1.centerOnScreen();
+        stage1.show();
 
     }
 

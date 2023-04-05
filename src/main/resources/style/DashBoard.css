@@ -2,10 +2,7 @@
 #homebtn ,#options{
     -fx-background-radius: 25;
     -fx-border-radius: 25;
-    -fx-border-color: #2D2727;
-}
-#homebtn :hover {
-    -fx-background-color: red;
+    -fx-background-color: #fffefe;
 }
 #dash {
     -fx-background-radius: 20;
@@ -136,4 +133,34 @@
 .radio-button {
     -fx-font-size: 16;
     -fx-font-weight: bold;
+}
+#date {
+    -fx-background-radius: 25;
+    -fx-background-color: #a2d2ff;
+}
+#timeLab {
+    -fx-font-weight: bold;
+    -fx-font-size: 35;
+}
+#dashdoenline {
+    -fx-background-color: #ece9ca;
+}
+#selectTime {
+    -fx-background-radius: 25;
+    -fx-border-color: #000000;
+    -fx-border-radius: 25;
+    -fx-background-color: #ffffff;
+    -fx-font-size: 20;
+}
+#researchBtnId {
+    -fx-border-radius: 25;
+    -fx-border-color: #000000;
+    -fx-background-radius: 25;
+    -fx-font-size: 20;
+    -fx-background-color: #7aff11;
+}
+#spadId {
+    -fx-border-color: black;
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
 }
