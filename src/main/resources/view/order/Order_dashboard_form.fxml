@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="oderDashboard" prefHeight="1020.0" prefWidth="1710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.order.OrderdashboardformController">
+   <children>
+      <TableView fx:id="orderTable" layoutX="63.0" layoutY="206.0" prefHeight="741.0" prefWidth="1302.0">
+         <columns>
+            <TableColumn fx:id="orderID" prefWidth="139.0" text="Oder ID" />
+            <TableColumn fx:id="cusID" prefWidth="176.0" text="Customer ID" />
+            <TableColumn fx:id="placeDate" prefWidth="160.0" text="Placed order date" />
+            <TableColumn fx:id="returnDate" prefWidth="193.0" text="Return order date" />
+            <TableColumn fx:id="itemCost" prefWidth="173.66668701171875" text="Items cost" />
+            <TableColumn fx:id="workRent" prefWidth="195.00006103515625" text="work rent" />
+            <TableColumn fx:id="qID" prefWidth="250.0" text="Quotation ID" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="addoder" buttonType="RAISED" layoutX="1456.0" layoutY="314.0" onAction="#addOrderOnAction" prefHeight="64.0" prefWidth="222.0" text="Add Oder" AnchorPane.rightAnchor="63.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-add-new-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TextField layoutX="64.0" layoutY="123.0" prefHeight="44.0" prefWidth="649.0" promptText="Search">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="720.0" layoutY="125.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-magnifying-glass-tilted-right-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="quotation" buttonType="RAISED" layoutX="1456.0" layoutY="429.0" onAction="#quotationOnAction" prefHeight="64.0" prefWidth="222.0" text="Quotation" AnchorPane.rightAnchor="63.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-manual-page-rotation-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="40.0" prefHeight="111.0" prefWidth="460.0" text="Order Manage From" textFill="#f7c04a">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="796.0" layoutY="125.0" prefHeight="30.0" prefWidth="30.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-rotate-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="print" buttonType="RAISED" layoutX="1421.0" layoutY="556.0" prefHeight="64.0" prefWidth="222.0" text="Print" AnchorPane.rightAnchor="63.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-print-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="mail" buttonType="RAISED" layoutX="1426.0" layoutY="697.0" prefHeight="64.0" prefWidth="222.0" text="Mail" AnchorPane.rightAnchor="63.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-send-email-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ComboBox fx:id="filtarId" layoutX="903.0" layoutY="123.0" prefWidth="150.0" />
+   </children>
+   <stylesheets>
+      <URL value="@../../style/Customer.css" />
+      <URL value="@../../style/AdminDashboar.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,4 +1,4 @@
-#employRegisterBtn,#employSalary,#employAttended,#employeeService {
+#addInventoryBtn,#supplierBtn {
     -fx-border-radius: 20;
     -fx-border-width: 2;
     -fx-border-color: #ffffff;

@@ -3,6 +3,7 @@ package controller.admin;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -20,13 +21,29 @@ public class AdminLogPagecontroller {
     public void adminLog(ActionEvent actionEvent) throws IOException {
         String gmailText = gmail.getText();
         String passwordText = password.getText();
-        if (gmailText.equals("")){new animatefx.animation.Bounce(gmail).play();}
-        if (passwordText.equals("")){new animatefx.animation.Bounce(password).play();}
+
+        /*if (gmailText.equals("")){new animatefx.animation.Bounce(gmail).play();}
+        if (passwordText.equals("")){new animatefx.animation.Bounce(password).play();}*/
+
+        if (gmailText.equals("Admin") ){
+            if (passwordText.equals("1234")){
+                goToDashBoard();
+            }else {
+                new Alert(Alert.AlertType.ERROR," PASSWORD ! ... ").showAndWait();
+            }
+        }else {
+            new Alert(Alert.AlertType.ERROR,"USER !").showAndWait();
+        }
+
+
+
+    }
+
+    private void goToDashBoard() throws IOException {
         Stage stage= (Stage) loginfromAnchorPane.getScene().getWindow();
         Window window = loginfromAnchorPane.getScene().getWindow();
         stage.setScene(ViewFactory.getInstance().getScene(SceneTypes.ADMIN_DASHBOARD));
         stage.setMaximized(true);
-
     }
 
     public void backOn(ActionEvent actionEvent) throws IOException {

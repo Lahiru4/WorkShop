@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1020.0" prefWidth="1710.0" stylesheets="@../../style/Employee.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.EmployeeManagementController">
+   <children>
+      <Label layoutX="50.0" prefHeight="111.0" prefWidth="472.0" text="Employee Management" textFill="#f7c04a">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <TableView layoutX="28.0" layoutY="263.0" prefHeight="700.0" prefWidth="1653.0" stylesheets="@../../style/MainTable.css">
+        <columns>
+          <TableColumn prefWidth="148.3333282470703" text="Employee Id" />
+          <TableColumn prefWidth="278.3332977294922" text="gmail" />
+            <TableColumn prefWidth="200.6666259765625" text="phone_number" />
+            <TableColumn prefWidth="208.6666259765625" text="id_number" />
+            <TableColumn prefWidth="231.0" text="register_date" />
+            <TableColumn prefWidth="170.3333740234375" text="position" />
+            <TableColumn prefWidth="213.3333740234375" text="Basic Salary" />
+            <TableColumn prefWidth="197.6666259765625" text="....." />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="employRegisterBtn" buttonType="RAISED" layoutX="42.0" layoutY="128.0" onAction="#empRegisterOnAction" prefHeight="48.0" prefWidth="238.0" text="Register Employee">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-add-user-male-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="employSalary" buttonType="RAISED" layoutX="331.0" layoutY="128.0" prefHeight="48.0" prefWidth="238.0" text="Employee Slary">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-banknotes-48.png" />
+               </image></ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="employAttended" buttonType="RAISED" layoutX="620.0" layoutY="131.0" prefHeight="48.0" prefWidth="253.0" text="Employee Attended">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-fingerprint-accepted-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="employeeService" buttonType="RAISED" layoutX="963.0" layoutY="132.0" prefHeight="48.0" prefWidth="253.0" text="Employee Service">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-service-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

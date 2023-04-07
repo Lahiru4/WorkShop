@@ -1,11 +1,11 @@
 package util;
 
-import controller.AddOdercontroller;
 import controller.LogingPageController;
-import controller.QuotationPageController;
-import controller.MainDashBoardController;
+import controller.dashboard.MainDashBoardController;
+import controller.order.QuotationPageController;
 import controller.admin.AdminLogPagecontroller;
 import controller.cashier.CashierDashboardController;
+import controller.cashier.ControllerItems;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,16 +20,23 @@ public class ViewFactory {
     private final MainDashBoardController mainDashBoardController;
     private final AdminLogPagecontroller adminLogPagecontroller;
     private final Object customerDashboardController;
+    private final Object orderDashBoardController;
     private CashierDashboardController cashierDashboardController;
     private final LogingPageController logingPageController;
-    private final AddOdercontroller addOdercontroller;
+    private final ControllerItems addOdercontroller;
     private final QuotationPageController questionpagecontroller;
-    private final Scene addOrderScene,questionScene,loginPageScene,cashierDashBoardScene,adminLoginScene,adminDashBoardScene,customerDashboardScene;
-    private final Parent addOrderpage,questionpage,loginPage,cashierDashBoard,adminLogPage,adminDashBoard,customerDashboard;
+    private final Scene addOrderScene;
+    private final Scene questionScene;
+    private final Scene loginPageScene;
+    private final Scene cashierDashBoardScene;
+    private final Scene adminLoginScene;
+    private final Scene adminDashBoardScene;
+    private Scene customerDashboardScene;
+    private final Parent addOrderpage,questionpage,loginPage,cashierDashBoard,adminLogPage,adminDashBoard,customerDashboard,orderDashBoard;
 
 
     private ViewFactory() throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/view/MainDashBoardFrom.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/view/dashboard/MainDashBoardFrom.fxml"));
         adminDashBoard=fxmlLoader1.load();
         mainDashBoardController =fxmlLoader1.getController();
         adminDashBoardScene = new Scene(adminDashBoard);
@@ -50,20 +57,25 @@ public class ViewFactory {
         logingPageController = fxmlLoader5.getController();
         loginPageScene=new Scene(loginPage);
 
-        FXMLLoader fxmlLoader6 = new FXMLLoader(getClass().getResource("/view/AddOder.fxml"));
+        FXMLLoader fxmlLoader6 = new FXMLLoader(getClass().getResource("../view/cashier/Items.fxml"));
         addOrderpage=fxmlLoader6.load();
         addOdercontroller= fxmlLoader6.getController();
         addOrderScene=new Scene(addOrderpage);
 
-        FXMLLoader fxmlLoader7 = new FXMLLoader(getClass().getResource("/view/QuotationPage.fxml"));
+        FXMLLoader fxmlLoader7 = new FXMLLoader(getClass().getResource("/view/order/QuotationPage.fxml"));
         questionpage=fxmlLoader7.load();
         questionpagecontroller= fxmlLoader7.getController();
         questionScene=new Scene(questionpage);
 
-        FXMLLoader fxmlLoader8=new FXMLLoader(getClass().getResource("/view/CustromerManageFrom.fxml"));
+        FXMLLoader fxmlLoader8=new FXMLLoader(getClass().getResource("/view/customer/CustromerManageFrom.fxml"));
         customerDashboard=fxmlLoader8.load();
         customerDashboardController=fxmlLoader8.getController();
         customerDashboardScene=new Scene(customerDashboard);
+
+        FXMLLoader fxmlLoader9=new FXMLLoader(getClass().getResource("/view/order/Order_dashboard_form.fxml"));
+        orderDashBoard=fxmlLoader9.load();
+        orderDashBoardController=fxmlLoader9.getController();
+        customerDashboardScene=new Scene(orderDashBoard);
     }
 
     public static ViewFactory getInstance() throws IOException {
@@ -80,6 +92,7 @@ public class ViewFactory {
             case ADD_ORDER:return addOrderpage;
             case Question_PAGE:return questionpage;
             case CUSTOMER_DASHBOARD:return customerDashboard;
+            case Order_DASHBOARD:return orderDashBoard;
         }
         return null;
     }

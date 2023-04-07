@@ -76,7 +76,7 @@
     -fx-border-radius: 25;
     -fx-font-size: 18;
 }
-.addCusLbl {
+.label {
     -fx-font-weight: bold;
     -fx-font-size: 18;
 }
@@ -89,4 +89,11 @@
     -fx-border-width: 2;
     -fx-border-radius: 25;
     -fx-background-radius: 25;
+}
+#arto {
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+    -fx-border-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-background-color: #F8F5E4;
 }

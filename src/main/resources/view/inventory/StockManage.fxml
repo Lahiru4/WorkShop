@@ -9,29 +9,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1020.0" prefWidth="1710.0" stylesheets="@../style/Stock.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.inventory.StockManageController">
+<AnchorPane fx:id="stockManage" prefHeight="1020.0" prefWidth="1710.0" stylesheets="@../../style/Stock.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.inventory.StockManageController">
    <children>
       <Label layoutX="50.0" prefHeight="111.0" prefWidth="484.0" text="Inventory Manager " textFill="#f7c04a">
          <font>
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <TableView layoutX="52.0" layoutY="266.0" prefHeight="711.0" prefWidth="1607.0" stylesheets="@../style/MainTable.css">
+      <TableView layoutX="52.0" layoutY="266.0" prefHeight="711.0" prefWidth="1607.0" stylesheets="@../../style/MainTable.css">
         <columns>
           <TableColumn prefWidth="105.66665649414062" text="Items Code" />
           <TableColumn prefWidth="139.33334350585938" text="Description" />
             <TableColumn prefWidth="160.33331298828125" text="QTY" />
             <TableColumn prefWidth="197.0" text="Purchase Price" />
             <TableColumn prefWidth="232.6666259765625" text="Selling Price" />
-            <TableColumn prefWidth="335.0" text="Supplier Id" />
-            <TableColumn prefWidth="430.0" text="C2" />
+            <TableColumn prefWidth="234.333251953125" text="Supplier Id" />
+            <TableColumn prefWidth="529.666748046875" text="C2" />
         </columns>
       </TableView>
-      <JFXButton fx:id="addInventoryBtn" buttonType="RAISED" layoutX="50.0" layoutY="154.0" text="Add Inventory ">
+      <JFXButton fx:id="addInventoryBtn" buttonType="RAISED" layoutX="50.0" layoutY="154.0" onAction="#addItemsOn" text="Add Inventory ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-add-new-50.png" />
+                  <Image url="@../../img/icons8-add-new-50.png" />
                </image>
             </ImageView>
          </graphic>
@@ -46,7 +46,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-supplier-48.png" />
+                  <Image url="@../../img/icons8-supplier-48.png" />
                </image>
             </ImageView>
          </graphic>
