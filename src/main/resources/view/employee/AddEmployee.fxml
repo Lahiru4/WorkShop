@@ -8,48 +8,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="761.0" prefWidth="956.0" stylesheets="@../../style/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.AddEmployeeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="761.0" prefWidth="1116.0" stylesheets="@../../style/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.AddEmployeeController">
    <children>
-      <AnchorPane prefHeight="759.0" prefWidth="956.0">
+      <AnchorPane layoutX="1.0" prefHeight="761.0" prefWidth="1141.0" stylesheets="@../../style/Employee.css">
          <children>
-            <JFXTextField fx:id="empId" layoutX="200.0" layoutY="82.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
+            <JFXTextField fx:id="empId" layoutX="207.0" layoutY="82.0" prefHeight="25.0" prefWidth="497.0" AnchorPane.leftAnchor="207.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="empName" layoutX="200.0" layoutY="194.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
+            <JFXTextField fx:id="gmail" layoutX="202.0" layoutY="280.0" prefHeight="25.0" prefWidth="497.0" AnchorPane.leftAnchor="202.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="empNumber" labelFloat="true" layoutX="200.0" layoutY="305.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
+            <JFXTextField fx:id="empNumber" labelFloat="true" layoutX="202.0" layoutY="379.0" prefHeight="25.0" prefWidth="497.0" AnchorPane.leftAnchor="202.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="cusAddress" layoutX="200.0" layoutY="658.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
+            <JFXTextField fx:id="empAddress" layoutX="206.0" layoutY="664.0" prefHeight="31.0" prefWidth="497.0" AnchorPane.leftAnchor="206.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="empPosition" layoutX="200.0" layoutY="538.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
+            <JFXTextField fx:id="empPosition" layoutX="205.0" layoutY="574.0" prefHeight="31.0" prefWidth="497.0" AnchorPane.leftAnchor="205.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <Label layoutX="36.0" layoutY="193.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="gmail                   :" />
-            <Label layoutX="36.0" layoutY="304.0" styleClass="addCusLbl" text="Modile Number  :" />
+            <Label layoutX="36.0" layoutY="282.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="gmail                   :" />
+            <Label layoutX="36.0" layoutY="378.0" styleClass="addCusLbl" text="Modile Number  :" />
             <Label layoutX="36.0" layoutY="81.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="Employee ID :">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="36.0" layoutY="657.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="Address               :" />
-            <Label layoutX="36.0" layoutY="537.0" styleClass="addCusLbl" text="position               :" />
-            <JFXButton fx:id="arto" buttonType="RAISED" layoutX="662.0" layoutY="82.0" text="Arto" />
-            <AnchorPane fx:id="side" layoutX="693.0" prefHeight="761.0" prefWidth="221.0" AnchorPane.rightAnchor="0.0">
+            <Label layoutX="36.0" layoutY="663.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="Address               :" />
+            <Label layoutX="36.0" layoutY="573.0" styleClass="addCusLbl" text="position               :" />
+            <JFXButton fx:id="arto" buttonType="RAISED" layoutX="771.0" layoutY="82.0" text="Arto" />
+            <AnchorPane fx:id="side" layoutX="693.0" prefHeight="761.0" prefWidth="210.0" AnchorPane.rightAnchor="25.0">
                <children>
-                  <JFXButton fx:id="save" layoutX="28.0" layoutY="658.0" onAction="#saveCustomer" prefHeight="46.0" prefWidth="166.0" text="   Save">
+                  <JFXButton fx:id="save" layoutX="30.0" layoutY="658.0" onAction="#saveEmp" prefHeight="46.0" prefWidth="166.0" text="   Save">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -63,12 +63,14 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <Label layoutX="36.0" layoutY="418.0" text="ID Number          :" />
-            <JFXTextField fx:id="iDnumber" layoutX="200.0" layoutY="419.0" prefHeight="25.0" prefWidth="422.0">
+            <Label layoutX="36.0" layoutY="477.0" text="ID Number          :" />
+            <JFXTextField fx:id="iDnumber" layoutX="206.0" layoutY="479.0" prefHeight="25.0" prefWidth="497.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
+            <JFXTextField fx:id="empName" layoutX="205.0" layoutY="187.0" prefHeight="25.0" prefWidth="497.0" />
+            <Label layoutX="36.0" layoutY="191.0" text="Employee Name  :" />
          </children>
       </AnchorPane>
    </children>

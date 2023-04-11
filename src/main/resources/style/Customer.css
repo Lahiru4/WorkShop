@@ -76,7 +76,7 @@
     -fx-border-radius: 25;
     -fx-font-size: 18;
 }
-.label {
+.label1 {
     -fx-font-weight: bold;
     -fx-font-size: 18;
 }
@@ -90,10 +90,11 @@
     -fx-border-radius: 25;
     -fx-background-radius: 25;
 }
-#arto {
+.arto {
     -fx-border-radius: 20;
     -fx-border-width: 2;
     -fx-border-color: #ffffff;
     -fx-background-radius: 20;
     -fx-background-color: #F8F5E4;
+    -fx-font-size: 13;
 }

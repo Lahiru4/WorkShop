@@ -1,6 +1,8 @@
 package model;
 
 import db.DbConnection;
+import dto.Employee;
+import util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,5 +23,9 @@ public class EmployeeModel {
             resultSet.getInt(4);
             resultSet.getDate(5);
         }
+    }
+    public static boolean saveEmployee(Employee employee){
+        CrudUtil.execute("insert into user values(?,?,?,?,?,?)",employee.getEmpId(),employee.get)
+        return null;
     }
 }

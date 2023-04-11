@@ -8,7 +8,7 @@ CREATE TABLE Items(
     selling_price DECIMAL(8,2),
     Purchase_price DECIMAL(8,2)
 );
-CREATE TABLE customer (
+CREATE TABLE customerTM (
 	Id VARCHAR(50) PRIMARY KEY,
     name VARCHAR(100),
     number VARCHAR(10),
@@ -22,7 +22,7 @@ CREATE TABLE Orders (
     return_date DATE,
     work_rent DECIMAL(8,2),
     customer_Id VARCHAR(50),
-    CONSTRAINT FOREIGN KEY(customer_Id) REFERENCES customer(Id)
+    CONSTRAINT FOREIGN KEY(customer_Id) REFERENCES customerTM(Id)
 );
 CREATE TABLE Quotation(
     Id VARCHAR(50),

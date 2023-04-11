@@ -4,13 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Customer {
-    private String cusID;
-    private String cusName;
-    private String cusNumber;
-    private String cusAddress;
-    private String cusGmail;
+    public String cusID;
+    public String cusName;
+    public String cusNumber;
+    public String cusAddress;
+    public String cusGmail;
 }
