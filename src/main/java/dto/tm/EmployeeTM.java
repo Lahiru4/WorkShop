@@ -1,5 +1,6 @@
-package dto;
+package dto.tm;
 
+import com.jfoenix.controls.JFXButton;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee {
+public class EmployeeTM {
     private String empId;
     private String empName;
     private String gmail;
@@ -16,4 +17,5 @@ public class Employee {
     private String register_date;
     private String address;
     private String position;
+    private JFXButton button;
 }

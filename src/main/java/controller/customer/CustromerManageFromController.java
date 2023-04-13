@@ -42,12 +42,9 @@ public class CustromerManageFromController {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/customer/AddCustromerFrom.fxml"))));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(addCustomer.getScene().getWindow());
-        stage.showAndWait();
+        stage.show();
     }
     public  void setTableData(){
-
-
-
         List<Customer> all = CustomerModel.getAll();
 
         for (Customer temp:all) {

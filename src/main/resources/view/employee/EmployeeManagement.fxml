@@ -16,16 +16,17 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <TableView layoutX="28.0" layoutY="263.0" prefHeight="700.0" prefWidth="1653.0" stylesheets="@../../style/MainTable.css">
+      <TableView fx:id="empTable" layoutX="28.0" layoutY="263.0" prefHeight="700.0" prefWidth="1653.0" stylesheets="@../../style/MainTable.css">
         <columns>
-          <TableColumn prefWidth="148.3333282470703" text="Employee Id" />
-          <TableColumn prefWidth="278.3332977294922" text="gmail" />
-            <TableColumn prefWidth="200.6666259765625" text="phone_number" />
-            <TableColumn prefWidth="208.6666259765625" text="id_number" />
-            <TableColumn prefWidth="231.0" text="register_date" />
-            <TableColumn prefWidth="170.3333740234375" text="position" />
-            <TableColumn prefWidth="213.3333740234375" text="Basic Salary" />
-            <TableColumn prefWidth="197.6666259765625" text="....." />
+          <TableColumn fx:id="id" prefWidth="148.3333282470703" text="Employee Id" />
+          <TableColumn fx:id="name" prefWidth="199.0" text="Name" />
+            <TableColumn fx:id="gmail" prefWidth="214.33331298828125" text="gmail" />
+            <TableColumn fx:id="phnumber" prefWidth="206.66668701171875" text="phone_number" />
+            <TableColumn fx:id="id_number" prefWidth="186.33331298828125" text="id_number" />
+            <TableColumn fx:id="r_date" prefWidth="154.0" text="register_date" />
+            <TableColumn fx:id="position" prefWidth="187.3333740234375" text="position" />
+            <TableColumn fx:id="address" prefWidth="164.3333740234375" text="address" />
+            <TableColumn fx:id="action" prefWidth="171.0" />
         </columns>
       </TableView>
       <JFXButton fx:id="employRegisterBtn" buttonType="RAISED" layoutX="42.0" layoutY="128.0" onAction="#empRegisterOnAction" prefHeight="48.0" prefWidth="238.0" text="Register Employee">

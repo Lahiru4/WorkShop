@@ -10,23 +10,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="819.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.inventory.AddInventoryController">
+<AnchorPane prefHeight="819.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.inventory.AddInventoryController">
    <children>
-      <Label layoutX="70.0" layoutY="375.0" text="Items Code :" />
-      <Label layoutX="71.0" layoutY="431.0" text="Description :" />
-      <Label layoutX="70.0" layoutY="482.0" text="QTY :" />
-      <Label layoutX="70.0" layoutY="609.0" text="Purchase Price :" />
-      <Label layoutX="70.0" layoutY="547.0" text="Selling price :" />
-      <Label layoutX="70.0" layoutY="670.0" text="Supplier Id :" />
-      <TextField layoutX="209.0" layoutY="375.0" prefHeight="33.0" prefWidth="417.0" />
-      <TextField layoutX="208.0" layoutY="427.0" prefHeight="33.0" prefWidth="417.0" />
-      <TextField layoutX="208.0" layoutY="482.0" prefHeight="33.0" prefWidth="417.0" />
-      <TextField layoutX="208.0" layoutY="547.0" prefHeight="33.0" prefWidth="417.0" />
-      <TextField layoutX="208.0" layoutY="609.0" prefHeight="33.0" prefWidth="417.0" />
+      <Label layoutX="51.0" layoutY="375.0" text="Items Code :" />
+      <Label layoutX="52.0" layoutY="431.0" text="Description :" />
+      <Label layoutX="51.0" layoutY="482.0" text="QTY :" />
+      <Label layoutX="51.0" layoutY="609.0" text="Purchase Price :" />
+      <Label layoutX="51.0" layoutY="547.0" text="Selling price :" />
+      <Label layoutX="51.0" layoutY="670.0" text="Supplier Id :" />
+      <TextField layoutX="209.0" layoutY="375.0" prefHeight="33.0" prefWidth="364.0" />
+      <TextField layoutX="208.0" layoutY="427.0" prefHeight="33.0" prefWidth="364.0" />
+      <TextField layoutX="208.0" layoutY="482.0" prefHeight="33.0" prefWidth="364.0" />
+      <TextField layoutX="208.0" layoutY="547.0" prefHeight="33.0" prefWidth="364.0" />
+      <TextField layoutX="208.0" layoutY="609.0" prefHeight="33.0" prefWidth="364.0" />
       <ComboBox layoutX="208.0" layoutY="674.0" prefHeight="25.0" prefWidth="246.0" />
-      <JFXButton fx:id="arto" buttonType="RAISED" layoutX="635.0" layoutY="375.0" text="Arto" />
-      <JFXButton fx:id="save" buttonType="RAISED" layoutX="595.0" layoutY="732.0" prefHeight="27.0" prefWidth="124.0" text="Save">
+      <JFXButton fx:id="arto" buttonType="RAISED" layoutX="587.0" layoutY="376.0" text="Arto" />
+      <JFXButton fx:id="save" buttonType="RAISED" layoutX="1042.0" layoutY="749.0" prefHeight="44.0" prefWidth="162.0" text="Save">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -52,6 +51,8 @@
             <Image url="@../../img/download.jpeg" />
          </image>
       </ImageView>
+      <TextField layoutX="820.0" layoutY="256.0" prefHeight="33.0" prefWidth="338.0" />
+      <Label layoutX="908.0" layoutY="35.0" text="Date :" />
    </children>
    <stylesheets>
       <URL value="@../../style/Lable.css" />

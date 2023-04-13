@@ -1,5 +1,6 @@
 package controller.inventory;
 
+import dto.Items;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
@@ -31,4 +32,7 @@ public class AddInventoryController {
             e.printStackTrace();
         }
     }
+    public Items colectData(){
+        return new Items();
+    };
 }
