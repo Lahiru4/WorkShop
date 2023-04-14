@@ -17,3 +17,11 @@
     -fx-background-radius: 20;
     -fx-background-color: #F8F5E4;
 }
+#newSupplierr {
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+    -fx-border-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-background-color: #69ee70;
+
+}

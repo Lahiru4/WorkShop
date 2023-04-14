@@ -19,6 +19,6 @@ public class StockManageController {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/inventory/AddInventory.fxml"))));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(stockManage.getScene().getWindow());
-        stage.showAndWait();
+        stage.show();
     }
 }
