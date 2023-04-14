@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.File;
+import java.io.FileInputStream;
 
 @Data
 @AllArgsConstructor
@@ -15,5 +15,5 @@ public class Items {
     private int QTY;
     private double selling_price;
     private double Purchase_price;
-    private File img;
+    private FileInputStream img;
 }

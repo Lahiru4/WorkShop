@@ -2,7 +2,6 @@ package controller.inventory;
 
 import com.jfoenix.controls.JFXButton;
 import dto.Items;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -11,9 +10,9 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import model.ItemsModel;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -28,12 +27,22 @@ public class AddInventoryController {
     public JFXButton arto;
     public JFXButton save;
     public Image image;
-    public File file;
+    public JFXButton addimg;
+    public FileInputStream fileInputStream;
 
 
     public void addImg(ActionEvent actionEvent) {
         FileChooser chooser = new FileChooser();
-        FileChooser.ExtensionFilter extensionFilterJPG = new FileChooser.ExtensionFilter("JPG files(*.jpg)", "*.JPG");
+        File file =chooser.showOpenDialog(addimg.getScene().getWindow());
+        try {
+            fileInputStream=new FileInputStream(file);
+            //-----------------------------
+            Image image1=new Image(fileInputStream);
+            imgView.setImage(image1);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+       /* FileChooser.ExtensionFilter extensionFilterJPG = new FileChooser.ExtensionFilter("JPG files(*.jpg)", "*.JPG");
         FileChooser.ExtensionFilter extensionFilterPNG = new FileChooser.ExtensionFilter("PNG files(*.png)", "*.PNG");
 
         chooser.getExtensionFilters().addAll(extensionFilterJPG, extensionFilterPNG);
@@ -45,13 +54,12 @@ public class AddInventoryController {
             imgView.setImage(image);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
-    public Items colectData() {
-        Image image1 = imgView.getImage();
+    public Items colectData()  {
         return new Items(itemCode.getText(), description.getText(), Integer.valueOf(qty.getText()),
-                Integer.valueOf(sellingprice.getText()), Integer.valueOf(purchaseprice.getText()), file);
+                Integer.valueOf(sellingprice.getText()), Integer.valueOf(purchaseprice.getText()),fileInputStream);
     }
     public void saveOnAction(ActionEvent actionEvent) {
         try {
@@ -62,6 +70,8 @@ public class AddInventoryController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
