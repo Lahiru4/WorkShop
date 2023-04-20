@@ -2,12 +2,35 @@ package controller.order;
 
 import dto.Order;
 import javafx.event.ActionEvent;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import model.PlaceOrder;
+
+import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class AddOdercontroller {
 
 
-    public static Order collect(){
+
+    public DatePicker date;
+    public Label orderDate;
+    public TextField orderId;
+
+    public void initialize(){
+        orderDate.setText(String.valueOf(LocalDate.now()));
+        try {
+            String s = PlaceOrder.orderGetLastId();
+            orderId.setText(s);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static Order collectData(){
          String id="";
          String description="";
          String order_date="2002.02.12";
@@ -19,6 +42,6 @@ public class AddOdercontroller {
     }
 
     public void saveOrder(ActionEvent actionEvent) {
-        PlaceOrder.place(collect(),"001");
+
     }
 }

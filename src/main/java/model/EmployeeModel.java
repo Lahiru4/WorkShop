@@ -57,9 +57,24 @@ public class EmployeeModel {
             throw new RuntimeException(e);
         }
         return getData;
-
     }
     public static boolean deleteEmployee(String empId) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("delete from employee  where employee_id = ?",empId);
+    }
+    public static List<String> getID() throws SQLException, ClassNotFoundException {
+        List<String> idData=new ArrayList<>();
+        String polished="Cashier";
+        ResultSet rs=CrudUtil.execute("SELECT employee_id FROM employee WHERE position = ?", polished);
+        while (rs.next()){
+            String id = rs.getString(1);
+
+            idData.add(id);
+        }
+        return idData;
+    }
+
+    public static boolean UpdateEmploy(Employee employee, String updateEmpId) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("update employee set name = ? ,gmail = ?,phone_number = ?,id_number = ?,register_date = ?, position=?, address=? where employee_id = ? ",
+                employee.getEmpName(),employee.getGmail(),employee.getNumber(),employee.getID_number(),employee.getRegister_date(),employee.getPosition(),employee.getAddress(),updateEmpId);
     }
 }

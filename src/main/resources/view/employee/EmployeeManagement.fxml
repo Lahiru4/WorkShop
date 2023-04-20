@@ -16,7 +16,7 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <TableView fx:id="empTable" layoutX="28.0" layoutY="263.0" prefHeight="700.0" prefWidth="1653.0" stylesheets="@../../style/MainTable.css">
+      <TableView fx:id="empTable" layoutX="28.0" layoutY="263.0" onMouseClicked="#empUpletOnAction" prefHeight="700.0" prefWidth="1653.0" stylesheets="@../../style/MainTable.css">
         <columns>
           <TableColumn fx:id="id" prefWidth="148.3333282470703" text="Employee Id" />
           <TableColumn fx:id="name" prefWidth="199.0" text="Name" />
@@ -25,8 +25,8 @@
             <TableColumn fx:id="id_number" prefWidth="186.33331298828125" text="id_number" />
             <TableColumn fx:id="r_date" prefWidth="154.0" text="register_date" />
             <TableColumn fx:id="position" prefWidth="187.3333740234375" text="position" />
-            <TableColumn fx:id="address" prefWidth="164.3333740234375" text="address" />
-            <TableColumn fx:id="action" prefWidth="171.0" />
+            <TableColumn fx:id="address" prefWidth="252.0" text="address" />
+            <TableColumn fx:id="action" prefWidth="84.0" />
         </columns>
       </TableView>
       <JFXButton fx:id="employRegisterBtn" buttonType="RAISED" layoutX="42.0" layoutY="128.0" onAction="#empRegisterOnAction" prefHeight="48.0" prefWidth="238.0" text="Register Employee">

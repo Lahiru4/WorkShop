@@ -3,13 +3,19 @@ package barcode;
 import org.krysalis.barcode4j.impl.code128.Code128Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 public class Barcode_Image {
     public static void createImage() {
-        Barcode_Image.createImage("chillyfacts.png", "999999999");
+        Barcode_Image.createImage("ddghtefyukhk.png", "52661");
         System.out.println("finished");
+    }
+
+    public static void main(String[] args) {
+        createImage();
     }
     public static void createImage(String image_name,String myString)  {
         try {
@@ -24,9 +30,11 @@ public class Barcode_Image {
             canvas.finish();
             //write to png file
             FileOutputStream fos = new FileOutputStream("D:\\frist project\\barcodelists\\"+image_name);
+            BufferedImage read = ImageIO.read(new FileInputStream("D:\\frist project\\barcodelists\\" + image_name));
             fos.write(baos.toByteArray());
             fos.flush();
             fos.close();
+            Barcode.barcodeRead(read);
         } catch (Exception e) {
             // TODO: handle exception
         }

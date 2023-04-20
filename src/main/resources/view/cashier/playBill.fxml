@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="360.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashier.PlayBillController">
+   <children>
+      <TextField layoutX="40.0" layoutY="184.0" prefHeight="33.0" prefWidth="430.0" promptText="gmail" />
+      <JFXButton fx:id="sendMail" layoutX="306.0" layoutY="253.0" prefHeight="52.0" prefWidth="162.0" text="Send Mail">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-send-email-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="printBill" contentDisplay="TOP" layoutX="73.0" layoutY="40.0" prefHeight="95.0" prefWidth="116.0" text="Print Bill">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-print-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="viewBill" contentDisplay="TOP" layoutX="297.0" layoutY="40.0" onAction="#viewBillOnAction" prefHeight="95.0" prefWidth="116.0" text="View Bill">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-preview-pane-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+   <stylesheets>
+      <URL value="@../../style/TexFeld.css" />
+      <URL value="@../../style/Cashier.css" />
+   </stylesheets>
+</AnchorPane>

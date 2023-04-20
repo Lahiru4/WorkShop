@@ -7,24 +7,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.EmployeeModel;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-import java.util.ResourceBundle;
 
-public class EmployeeManagementController implements Initializable {
+public class EmployeeManagementController {
 
     public JFXButton employRegisterBtn;
     public TableColumn id;
@@ -48,9 +46,7 @@ public class EmployeeManagementController implements Initializable {
         stage.show();
 
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize() {
         setCellValueFactory();
         setTableData();
 
@@ -112,9 +108,20 @@ public class EmployeeManagementController implements Initializable {
         phnumber.setCellValueFactory(new PropertyValueFactory<>("number"));
         id_number.setCellValueFactory(new PropertyValueFactory<>("iD_number"));
         r_date.setCellValueFactory(new PropertyValueFactory<>("register_date"));
-        position.setCellValueFactory(new PropertyValueFactory<>("position"));
+        position.setCellValueFactory(new PropertyValueFactory<>("address"));
         action.setCellValueFactory(new PropertyValueFactory<>("button"));
-        address.setCellValueFactory(new PropertyValueFactory<>("address"));
+        address.setCellValueFactory(new PropertyValueFactory<>("position"));
     }
 
+
+    public void empUpletOnAction(MouseEvent mouseEvent) throws IOException {
+        int selectedIndex = empTable.getSelectionModel().getSelectedIndex();
+        String empId = data.get(selectedIndex).getEmpId();
+        AddEmployeeController.setUpdateEmpId(empId);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/employee/AddEmployee.fxml"))));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(employRegisterBtn.getScene().getWindow());
+        stage.show();
+    }
 }

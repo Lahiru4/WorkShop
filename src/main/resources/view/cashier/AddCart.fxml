@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="339.0" prefWidth="412.0" stylesheets="@../../style/Cashier.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashier.AddCartController">
+   <children>
+      <Label layoutX="39.0" layoutY="70.0" prefHeight="55.0" prefWidth="133.0" text="Qty. On Hand:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="entQty" layoutX="149.0" layoutY="156.0" prefHeight="47.0" prefWidth="148.0" />
+      <Label layoutX="40.0" layoutY="152.0" prefHeight="55.0" prefWidth="65.0" text="QTY :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="addcartBtn" layoutX="252.0" layoutY="256.0" onAction="#addtobtnOnAction" prefHeight="38.0" prefWidth="133.0" text="Add to cart" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/cart.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="qty" alignment="CENTER" layoutX="172.0" layoutY="82.0" prefHeight="32.0" prefWidth="233.0" textFill="#bc4e4e">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

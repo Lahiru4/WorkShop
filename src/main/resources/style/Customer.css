@@ -83,7 +83,7 @@
 #side {
     -fx-background-color: #3F497F;
 }
-#save,#addCustomer {
+#save,#addCustomer,#update {
     -fx-background-color: #f8f5e4;
     -fx-border-color: #ffffff;
     -fx-border-width: 2;

@@ -12,7 +12,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
 public class Barcode_PDF {
     public static void main(String[] args) {
-        Barcode_PDF.createPDF("chillyfacts1.pdf","lahiruIndusara");
+        Barcode_PDF.createPDF("chillyfacts1.pdf","52");
     }
     public static void createPDF(String pdfFilename,String myString) {
         Document doc = new Document();

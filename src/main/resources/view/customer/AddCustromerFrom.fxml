@@ -1,35 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="590.0" prefWidth="927.0" styleClass="label1" stylesheets="@../../style/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customer.AddCustromerFromController">
+<AnchorPane prefHeight="640.0" prefWidth="752.0" styleClass="label1" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customer.AddCustromerFromController">
    <children>
-      <JFXTextField fx:id="cusID" layoutX="200.0" layoutY="82.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
-         <font>
-            <Font size="15.0" />
-         </font></JFXTextField>
-      <JFXTextField fx:id="cusName" layoutX="200.0" layoutY="194.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
-         <font>
-            <Font size="15.0" />
-         </font></JFXTextField>
-      <JFXTextField fx:id="cusNumber" labelFloat="true" layoutX="200.0" layoutY="313.0" onKeyPressed="#on" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
-         <font>
-            <Font size="15.0" />
-         </font></JFXTextField>
-      <JFXTextField fx:id="cusAddress" layoutX="200.0" layoutY="407.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
-         <font>
-            <Font size="15.0" />
-         </font></JFXTextField>
-      <JFXTextField fx:id="cusGmail" layoutX="200.0" layoutY="487.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="200.0">
-         <font>
-            <Font size="15.0" />
-         </font></JFXTextField>
       <Label layoutX="36.0" layoutY="193.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="User Name          :" />
       <Label layoutX="36.0" layoutY="312.0" styleClass="addCusLbl" text="Modile Number  :" />
       <Label layoutX="36.0" layoutY="81.0" prefHeight="27.0" prefWidth="149.0" styleClass="label1" text="Customer Id        :">
@@ -39,22 +20,39 @@
       </Label>
       <Label layoutX="36.0" layoutY="406.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="Address               :" />
       <Label layoutX="36.0" layoutY="486.0" styleClass="addCusLbl" text="Gmail                   :" />
-      <JFXButton fx:id="arto" buttonType="RAISED" layoutX="634.0" layoutY="82.0" styleClass="arto" text="Arto" />
-      <AnchorPane fx:id="side" layoutX="693.0" prefHeight="590.0" prefWidth="221.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <JFXButton fx:id="save" layoutX="28.0" layoutY="510.0" onAction="#saveCustomer" prefHeight="46.0" prefWidth="166.0" text="   Save">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../img/icons8-ok-50.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </AnchorPane>
+      <JFXButton fx:id="arto" buttonType="RAISED" layoutX="655.0" layoutY="82.0" styleClass="arto" text="Arto" />
+      <JFXButton fx:id="save" layoutX="556.0" layoutY="568.0" onAction="#saveCustomer" prefHeight="46.0" prefWidth="166.0" text="   Save">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-ok-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="cusID" layoutX="200.0" layoutY="82.0" prefHeight="33.0" prefWidth="422.0" />
+      <TextField fx:id="cusName" layoutX="200.0" layoutY="190.0" prefHeight="33.0" prefWidth="422.0" />
+      <TextField fx:id="cusNumber" layoutX="200.0" layoutY="309.0" prefHeight="33.0" prefWidth="422.0" />
+      <TextField fx:id="cusAddress" layoutX="200.0" layoutY="403.0" prefHeight="33.0" prefWidth="422.0" />
+      <TextField fx:id="cusGmail" layoutX="200.0" layoutY="486.0" prefHeight="33.0" prefWidth="422.0" />
+      <JFXButton fx:id="update" layoutX="556.0" layoutY="568.0" onAction="#updateOnAction" prefHeight="46.0" prefWidth="166.0" text="update">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-sync-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
    </children>
+   <stylesheets>
+      <URL value="@../../style/Customer.css" />
+      <URL value="@../../style/TexFeld.css" />
+   </stylesheets>
 </AnchorPane>

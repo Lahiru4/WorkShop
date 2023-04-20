@@ -43,7 +43,7 @@
 }
 .display {
     -fx-font-size: 45;
-    -fx-font-style: Regular;
+    -fx-font-style: bold;
 }
 
 #date {
@@ -71,7 +71,7 @@
     -fx-border-color: black;
 }
 .scroll-bar{
-    -fx-background-color: transparent;
+    -fx-background-color: black;
 }
 .scroll-bar:vertical .track{-fx-background-color: transparent;}
 .scroll-bar:horizontal .track{-fx-background-color: transparent;}

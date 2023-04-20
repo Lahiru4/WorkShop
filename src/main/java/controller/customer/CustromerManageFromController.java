@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -72,8 +73,6 @@ public class CustromerManageFromController {
             Optional<ButtonType> buttonType = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
 
             if (buttonType.orElse(no) == yes){
-                /*int index = cusTable.getSelectionModel().getSelectedIndex();
-                String cusID = data.get(index).getCusID();*/
                 String cusID = temp.getCusID();
 
                 try {
@@ -106,7 +105,20 @@ public class CustromerManageFromController {
     }
 
     public void restatBtnOnAction(ActionEvent actionEvent) {
-        setTableData();
         cusTable.refresh();
+    }
+
+    public void cusUpleOnAction(MouseEvent mouseEvent) throws IOException {
+        int selectedIndex = cusTable.getSelectionModel().getSelectedIndex();
+        String cusID = data.get(selectedIndex).getCusID();
+        AddCustromerFromController.setUpdate_cus_ID(cusID);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/customer/AddCustromerFrom.fxml"))));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(addCustomer.getScene().getWindow());
+        stage.show();
+
+
     }
 }

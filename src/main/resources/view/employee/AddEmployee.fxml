@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -22,7 +23,7 @@
             </Label>
             <Label layoutX="36.0" layoutY="350.0" prefHeight="27.0" prefWidth="149.0" styleClass="label1" text="Address               :" />
             <Label layoutX="723.0" layoutY="248.0" styleClass="label1" text="position               :" />
-            <JFXButton fx:id="arto" buttonType="RAISED" layoutX="629.0" layoutY="65.0" styleClass="arto" text="Arto" />
+            <JFXButton fx:id="arto" buttonType="RAISED" layoutX="629.0" layoutY="65.0" onAction="#artoOnAction" styleClass="arto" text="Arto" />
             <Label layoutX="36.0" layoutY="250.0" styleClass="label1" text="ID Number          :" />
             <Label layoutX="723.0" layoutY="66.0" styleClass="label1" text="Employee Name  :" />
             <JFXButton fx:id="save" layoutX="1095.0" layoutY="468.0" onAction="#saveEmp" prefHeight="40.0" prefWidth="200.0" text="   Save">
@@ -44,8 +45,20 @@
             <TextField fx:id="empAddress" layoutX="200.0" layoutY="348.0" prefHeight="33.0" prefWidth="405.0" />
             <TextField fx:id="empName" layoutX="893.0" layoutY="65.0" prefHeight="33.0" prefWidth="405.0" />
             <TextField fx:id="empNumber" layoutX="893.0" layoutY="148.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="empPosition" layoutX="893.0" layoutY="247.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="date" layoutX="893.0" layoutY="348.0" prefHeight="33.0" prefWidth="282.0" />
+            <TextField fx:id="date" layoutX="893.0" layoutY="348.0" prefHeight="33.0" prefWidth="312.0" />
+            <ComboBox fx:id="empPositionCombox" layoutX="893.0" layoutY="245.0" prefHeight="33.0" prefWidth="405.0" />
+            <JFXButton fx:id="updatebtn" layoutX="841.0" layoutY="470.0" onAction="#updateOnActin" prefHeight="40.0" prefWidth="200.0" text="Update">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-sync-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
          </children>
          <stylesheets>
             <URL value="@../../style/Employee.css" />

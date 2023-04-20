@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="loadFormContext" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashier.CashierDashboardController">
    <children>
-      <JFXButton fx:id="homebtn" buttonType="RAISED" contentDisplay="TOP" ellipsisString="" layoutX="32.0" layoutY="54.0" prefHeight="90.0" prefWidth="90.0" text="Sales">
+      <JFXButton fx:id="homebtn" buttonType="RAISED" contentDisplay="TOP" ellipsisString="" layoutX="32.0" layoutY="54.0" onAction="#homebtnOnAction" prefHeight="90.0" prefWidth="90.0" text="Sales">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -33,6 +33,15 @@
             <Font size="15.0" />
          </font></JFXButton>
       <AnchorPane fx:id="itemsAndBill" layoutX="150.0" layoutY="2.0" prefHeight="1076.0" prefWidth="1768.0" />
+      <JFXButton fx:id="logOutBtn" contentDisplay="GRAPHIC_ONLY" layoutX="38.0" layoutY="971.0" onAction="#logOutBtnOn" prefHeight="78.0" prefWidth="78.0" text="EXT">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-sign-out-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
    <stylesheets>
       <URL value="@../../style/DashBoard.css" />

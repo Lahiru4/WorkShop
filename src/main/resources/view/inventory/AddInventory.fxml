@@ -60,13 +60,13 @@
       <Label alignment="CENTER" layoutX="835.0" layoutY="229.0" prefHeight="30.0" prefWidth="263.0" text="Supplier information" textFill="#f7c04a" />
       <Label layoutX="634.0" layoutY="397.0" text="Supplier Name     :" />
       <Label layoutX="634.0" layoutY="475.0" text="Supplier Address  :" />
-      <TextField layoutX="822.0" layoutY="398.0" prefHeight="33.0" prefWidth="306.0" />
-      <TextField layoutX="822.0" layoutY="474.0" prefHeight="33.0" prefWidth="306.0" />
+      <TextField fx:id="supName" layoutX="822.0" layoutY="398.0" prefHeight="33.0" prefWidth="306.0" />
+      <TextField fx:id="supAddress" layoutX="822.0" layoutY="474.0" prefHeight="33.0" prefWidth="306.0" />
       <Label layoutX="634.0" layoutY="556.0" text="Supplier Number :" />
-      <TextField layoutX="822.0" layoutY="555.0" prefHeight="33.0" prefWidth="306.0" text="+94 " />
-      <Label layoutX="634.0" layoutY="634.0" text="Supplier Number :" />
-      <TextField layoutX="825.0" layoutY="632.0" prefHeight="33.0" prefWidth="306.0" />
-      <ComboBox layoutX="825.0" layoutY="320.0" prefHeight="27.0" prefWidth="226.0" />
+      <TextField fx:id="supnumber" layoutX="822.0" layoutY="555.0" prefHeight="33.0" prefWidth="306.0" />
+      <Label layoutX="634.0" layoutY="634.0" text="Supplier Gmail     :" />
+      <TextField fx:id="supGmail" layoutX="825.0" layoutY="632.0" prefHeight="33.0" prefWidth="306.0" />
+      <ComboBox fx:id="supplierIdComBox" layoutX="825.0" layoutY="320.0" prefHeight="27.0" prefWidth="226.0" />
       <JFXButton fx:id="newSupplierr" buttonType="RAISED" layoutX="1067.0" layoutY="320.0" text="NEW" />
    </children>
    <stylesheets>

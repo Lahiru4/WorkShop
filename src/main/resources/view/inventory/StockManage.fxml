@@ -16,15 +16,15 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <TableView layoutX="52.0" layoutY="266.0" prefHeight="711.0" prefWidth="1607.0" stylesheets="@../../style/MainTable.css">
+      <TableView fx:id="stockTable" layoutX="52.0" layoutY="266.0" prefHeight="711.0" prefWidth="1607.0" stylesheets="@../../style/MainTable.css">
         <columns>
-          <TableColumn prefWidth="105.66665649414062" text="Items Code" />
-          <TableColumn prefWidth="139.33334350585938" text="Description" />
-            <TableColumn prefWidth="160.33331298828125" text="QTY" />
-            <TableColumn prefWidth="197.0" text="Purchase Price" />
-            <TableColumn prefWidth="232.6666259765625" text="Selling Price" />
-            <TableColumn prefWidth="234.333251953125" text="Supplier Id" />
-            <TableColumn prefWidth="529.666748046875" text="C2" />
+          <TableColumn fx:id="code" prefWidth="178.0000457763672" text="Items Code" />
+          <TableColumn fx:id="description" prefWidth="330.6666564941406" text="Description" />
+            <TableColumn fx:id="qty" prefWidth="172.33334350585938" text="QTY" />
+            <TableColumn fx:id="purchasePrice" prefWidth="266.6666259765625" text="Purchase Price" />
+            <TableColumn fx:id="sellingPrice" prefWidth="279.33331298828125" text="Selling Price" />
+            <TableColumn fx:id="supplierId" prefWidth="261.99993896484375" text="Supplier Id" />
+            <TableColumn fx:id="action" prefWidth="99.3333740234375" />
         </columns>
       </TableView>
       <JFXButton fx:id="addInventoryBtn" buttonType="RAISED" layoutX="50.0" layoutY="154.0" onAction="#addItemsOn" text="Add Inventory ">

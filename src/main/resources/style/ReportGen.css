@@ -1,0 +1,7 @@
+#inventory ,#empReport{
+    -fx-background-color: rgba(63, 183, 219, 0.59);
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+}
