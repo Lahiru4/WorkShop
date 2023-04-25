@@ -2,14 +2,14 @@
     -fx-background-color: transparent;
     -fx-font-size: 18;
 }
-/*.table-view .column-header-background .filler {
+.table-view .column-header-background .filler {
     -fx-background-color: transparent;
-}*/
+}
 .table-view .corner {
     -fx-background-color: transparent;
 }
 .table-view .column-header-background{
-    -fx-background-color: transparent;
+    -fx-background-color: linear-gradient(to bottom, #1dbbdd44, #93f9b944);
     -fx-background-radius: 7px 7px 0px 0px;
     -fx-background-insets: 0 11px 0 0;
     -fx-padding: 0 0 5px 0;
@@ -19,23 +19,23 @@
 }
 .table-view .table-cell{
     -fx-border-color: transparent;
-    -fx-padding: transparent;
+    -fx-padding: 2 0 2 10px;
 }
-/*.table-row-cell:hover {
-    -fx-background-color:transparent;
-    !*-fx-text-background-color: ;*!
-}*/
+.table-row-cell:hover {
+    -fx-background-color: rgb(41, 191, 97);
+    -fx-text-background-color: red;
+}
 .table-row-cell:odd{
-    -fx-background-color: transparent;
-    -fx-background-insets: transparent;
+    -fx-background-color: #93f9b911;
+    -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
 .table-row-cell:even{
-    -fx-background-color: transparent;
-    -fx-background-insets: transparent;
+    -fx-background-color: #1dbbdd11;
+    -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
-/*.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical,
 .table-view .virtual-flow .scroll-bar:vertical .track,
 .table-view .virtual-flow .scroll-bar:vertical .track-background,
 .table-view .virtual-flow .scroll-bar:horizontal,
@@ -47,28 +47,10 @@
 .table-view .virtual-flow .scroll-bar .decrement-button {
     -fx-opacity: 0;
     -fx-padding: 2;
-}*/
+}
 .table-view .virtual-flow .scroll-bar:vertical .thumb{
     -fx-background-color:  linear-gradient(to bottom, #1dbbdd, #93f9b9);
 }
 .table-view .virtual-flow .scroll-bar:horizontal .thumb {
     -fx-background-color:  linear-gradient(to right, #1dbbdd44, #93f9b944);
-}
-#addcartBtn {
-    -fx-border-radius: 15;
-    -fx-background-radius: 15;
-    -fx-background-color: rgba(63, 63, 242, 0.88);
-}
-#entQty {
-    -fx-background-color: #ffffff;
-    -fx-border-color: black;
-    -fx-border-radius: 15;
-    -fx-background-radius: 15;
-}
-#sendMail,#printBill ,#viewBill{
-    -fx-background-color: #f8f5e4;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 2;
-    -fx-border-radius: 25;
-    -fx-background-radius: 25;
 }

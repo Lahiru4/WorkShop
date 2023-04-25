@@ -93,5 +93,6 @@
    <stylesheets>
       <URL value="@../../style/Customer.css" />
       <URL value="@../../style/AdminDashboar.css" />
+      <URL value="@../../style/Table.css" />
    </stylesheets>
 </AnchorPane>

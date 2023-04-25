@@ -46,7 +46,7 @@ public class StockManageController {
 
             List<ItemsTM> all = ItemsModel.getAll();
             for (ItemsTM temp:all){
-                Image img=new Image("/img/icons8-cancel-50.png");
+                Image img=new Image("/img/icons8-delete-100.png");
                 ImageView imageView=new ImageView(img);
                 imageView.setFitHeight(30);
                 imageView.setPreserveRatio(true);

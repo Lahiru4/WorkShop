@@ -16,7 +16,7 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <TableView fx:id="empTable" layoutX="28.0" layoutY="263.0" onMouseClicked="#empUpletOnAction" prefHeight="700.0" prefWidth="1653.0" stylesheets="@../../style/MainTable.css">
+      <TableView fx:id="empTable" layoutX="28.0" layoutY="246.0" onMouseClicked="#empUpletOnAction" prefHeight="627.0" prefWidth="1653.0" stylesheets="@../../style/MainTable.css">
         <columns>
           <TableColumn fx:id="id" prefWidth="148.3333282470703" text="Employee Id" />
           <TableColumn fx:id="name" prefWidth="199.0" text="Name" />
@@ -59,7 +59,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../img/icons8-fingerprint-accepted-48.png" />
+                  <Image url="@../../img/icons8-portrait-mode-scanning-48.png" />
                </image>
             </ImageView>
          </graphic>
@@ -72,6 +72,18 @@
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/icons8-service-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="saveEmployeeDetails" buttonType="RAISED" layoutX="1286.0" layoutY="911.0" onAction="#saveEmployeeDetailsOnAction" prefHeight="48.0" prefWidth="354.0" text="Save Employee Details (Excel)">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-microsoft-excel-2019-48.png" />
                </image>
             </ImageView>
          </graphic>

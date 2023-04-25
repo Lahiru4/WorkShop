@@ -39,19 +39,32 @@
 }
 .label2 {
     -fx-font-weight: bold;
-    -fx-font-size: 27;
+    -fx-font-size: 22;
+}
+#profit,#order,#qty {
+    -fx-font-weight: bold;
+    -fx-font-size: 35;
+}
+#mainDate {
+    -fx-font-weight: bold;
+    -fx-font-size: 35;
+}
+.label3 {
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+}
+.mainLabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 28;
 }
 .display {
     -fx-font-size: 45;
     -fx-font-style: bold;
 }
 
-#date {
-    -fx-font-size: 18;
-}
 .combo-box {
     -fx-border-color: black;
-    -fx-border-radius: 5;
+    -fx-border-radius: 12;
     -fx-background-color: #ffffff;
     -fx-font-size: 15.2;
 }
@@ -68,10 +81,12 @@
     -fx-background-color: #ffffff;
 }
 #salesdash {
+    -fx-border-radius: 80;
+    -fx-background-radius: 80;
     -fx-border-color: black;
 }
 .scroll-bar{
-    -fx-background-color: black;
+    -fx-background-color: transparent;
 }
 .scroll-bar:vertical .track{-fx-background-color: transparent;}
 .scroll-bar:horizontal .track{-fx-background-color: transparent;}
@@ -134,9 +149,9 @@
     -fx-font-size: 16;
     -fx-font-weight: bold;
 }
-#date {
+#time {
     -fx-background-radius: 25;
-    -fx-background-color: #a2d2ff;
+    -fx-background-color: #ffffff;
 }
 #timeLab {
     -fx-font-weight: bold;
@@ -150,13 +165,13 @@
     -fx-border-color: #000000;
     -fx-border-radius: 25;
     -fx-background-color: #ffffff;
-    -fx-font-size: 20;
+    -fx-font-size: 18;
 }
 #researchBtnId {
     -fx-border-radius: 25;
-    -fx-border-color: #000000;
+    -fx-border-color: #ffffff;
     -fx-background-radius: 25;
-    -fx-font-size: 20;
+    -fx-font-size: 18;
     -fx-background-color: #7aff11;
 }
 #spadId {

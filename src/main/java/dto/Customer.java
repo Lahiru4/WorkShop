@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Customer {
-    public String cusID;
-    public String cusName;
-    public String cusNumber;
-    public String cusAddress;
-    public String cusGmail;
+    private String cusID;
+    private String cusName;
+    private String cusNumber;
+    private String cusAddress;
+    private String cusGmail;
 }

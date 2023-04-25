@@ -55,15 +55,15 @@ public class AddCustromerFromController {
     public void saveCustomer(ActionEvent actionEvent) {
         try {
             boolean b = CustomerModel.setData(getTexData());
-            if (b){
-                System.out.println("okay");
+            if (b) {
+                new Alert(Alert.AlertType.INFORMATION, "ok").show();
                 Notifications.create()
-                .graphic(new ImageView(new Image("/img/icons8-cancel-50.png")))
-                .text("Add ")
-                .title("Okay")
-                .hideAfter(Duration.seconds(5))
-                .position(Pos.TOP_RIGHT)
-                .showConfirm();
+                        .graphic(new ImageView(new Image("/img/icons8-cancel-50.png")))
+                        .text("Add ")
+                        .title("Okay")
+                        .hideAfter(Duration.seconds(5))
+                        .position(Pos.TOP_RIGHT)
+                        .show();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -72,7 +72,7 @@ public class AddCustromerFromController {
         }
         update.getScene().getWindow().hide();
         texClear();
-        update_cus_ID="";
+        update_cus_ID = "";
 
 
     }
@@ -92,14 +92,35 @@ public class AddCustromerFromController {
         }
         update.getScene().getWindow().hide();
         texClear();
-        update_cus_ID="";
+        update_cus_ID = "";
 
     }
-    public void texClear(){
+
+    public void texClear() {
         cusID.clear();
         cusName.clear();
         cusNumber.clear();
         cusAddress.clear();
         cusGmail.clear();
+    }
+
+    public void cusIdArtoOnAction(ActionEvent actionEvent) {
+        try {
+            String s = genCustomerId();
+            cusID.setText(s);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String genCustomerId() throws SQLException, ClassNotFoundException {
+        String lastId = CustomerModel.getLastcustomerId();
+        String[] split = lastId.split("[CUS][-]");
+        int i = Integer.parseInt(split[1]);
+        i++;
+        String id = String.format("CUS-%04d",i);
+        return id;
     }
 }

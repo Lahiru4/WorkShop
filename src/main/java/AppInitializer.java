@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import model.OrderModel;
 import util.ViewFactory;
 import util.types.SceneTypes;
 
@@ -17,5 +18,6 @@ public class AppInitializer extends Application {
         primaryStage.getIcons().add(new Image("img/icons8-shop-94.png"));
         primaryStage.centerOnScreen();
         primaryStage.show();
+        OrderModel.getSellsLineChartData();
     }
 }

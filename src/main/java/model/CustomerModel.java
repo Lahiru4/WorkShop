@@ -49,4 +49,11 @@ public class CustomerModel {
         return CrudUtil.execute("update customer set name = ? ,number = ?,address = ?,gmail = ?where Id = ? ", customer.getCusName(),
                 customer.getCusNumber(), customer.getCusAddress(), customer.getCusGmail(), cusID);
     }
+    public static String getLastcustomerId() throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute("SELECT Id FROM customer ORDER BY Id DESC LIMIT 1");
+        if (resultSet.next()) {
+            return String.valueOf(resultSet.getString(1));
+        }
+        return "CUS-0001";
+    }
 }

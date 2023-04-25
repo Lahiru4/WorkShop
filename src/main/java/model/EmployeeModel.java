@@ -72,9 +72,15 @@ public class EmployeeModel {
         }
         return idData;
     }
-
     public static boolean UpdateEmploy(Employee employee, String updateEmpId) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("update employee set name = ? ,gmail = ?,phone_number = ?,id_number = ?,register_date = ?, position=?, address=? where employee_id = ? ",
                 employee.getEmpName(),employee.getGmail(),employee.getNumber(),employee.getID_number(),employee.getRegister_date(),employee.getPosition(),employee.getAddress(),updateEmpId);
+    }
+    public static String getLastEmployeeId() throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute("SELECT employee_id FROM employee ORDER BY employee_id DESC LIMIT 1");
+        if (resultSet.next()) {
+            return String.valueOf(resultSet.getString(1));
+        }
+        return "";
     }
 }

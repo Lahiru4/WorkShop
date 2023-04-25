@@ -25,3 +25,6 @@
     -fx-background-color: #69ee70;
 
 }
+#empId {
+    -fx-border-width: bold;
+}

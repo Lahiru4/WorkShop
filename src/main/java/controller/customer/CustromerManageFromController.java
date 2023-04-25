@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,7 +17,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.CustomerModel;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -34,6 +37,7 @@ public class CustromerManageFromController {
     public TableColumn action;
     public AnchorPane customerDashboard;
     private ObservableList<CustomerTM> data= FXCollections.observableArrayList();
+
     public void initialize(){
         setTableData();
         setCellValueFactory();
@@ -47,9 +51,10 @@ public class CustromerManageFromController {
     }
     public  void setTableData(){
         List<Customer> all = CustomerModel.getAll();
+        ObservableList<CustomerTM> dataTemp= FXCollections.observableArrayList();
 
         for (Customer temp:all) {
-            Image img=new Image("/img/icons8-cancel-50.png");
+            Image img=new Image("/img/icons8-delete-100.png");
             ImageView imageView=new ImageView(img);
             imageView.setFitHeight(30);
             imageView.setPreserveRatio(true);
@@ -57,9 +62,10 @@ public class CustromerManageFromController {
             button.setGraphic(imageView);
 
             setRemoveBtnOnAction(button,temp);
-            data.add(new CustomerTM(temp.getCusID(),temp.getCusName(),temp.getCusNumber(),temp.getCusAddress(),
+            dataTemp.add(new CustomerTM(temp.getCusID(),temp.getCusName(),temp.getCusNumber(),temp.getCusAddress(),
                     temp.getCusGmail(),button));
         }
+        data=dataTemp;
         cusTable.setItems(data);
         cusTable.refresh();
 
@@ -78,7 +84,17 @@ public class CustromerManageFromController {
                 try {
                     boolean b = CustomerModel.deleteCustomer(cusID);
                     if (b){
-                        new Alert(Alert.AlertType.INFORMATION,"User Deleted Successful").showAndWait();
+                        ImageView imageView = new ImageView(new Image("/img/icons8-ok-48.png"));
+                        Notifications.create()
+                                .graphic(imageView)
+                                .text(" Deleted Successful ")
+                                .title("Successful")
+                                .hideAfter(Duration.seconds(5))
+                                .position(Pos.TOP_RIGHT)
+                                .darkStyle()
+                                .show();
+                        setTableData();
+
                         data.remove(temp);
                         cusTable.refresh();
                     }

@@ -41,7 +41,7 @@
       </JFXButton>
       <ScrollPane layoutX="266.0" layoutY="164.0" prefHeight="853.0" prefWidth="1440.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="916.0" prefWidth="1423.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="953.0" prefWidth="1423.0" />
         </content>
       </ScrollPane>
       <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="38.0" layoutY="520.0" prefHeight="142.0" prefWidth="196.0" text="Sales Report" textFill="#2e22c7">

@@ -7,16 +7,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.EmployeeModel;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -40,7 +43,11 @@ public class EmployeeManagementController {
 
     public void empRegisterOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/employee/AddEmployee.fxml"))));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/employee/AddEmployee.fxml"));
+        Parent parent=fxmlLoader.load();
+        AddEmployeeController controller = fxmlLoader.getController();
+        controller.update.setVisible(false);
+        stage.setScene(new Scene(parent));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(employRegisterBtn.getScene().getWindow());
         stage.show();
@@ -56,7 +63,7 @@ public class EmployeeManagementController {
         List<Employee> all = EmployeeModel.getAll();
 
         for (Employee temp : all) {
-            Image img = new Image("/img/icons8-cancel-50.png");
+            Image img = new Image("/img/icons8-delete-100.png");
             ImageView imageView = new ImageView(img);
             imageView.setFitHeight(30);
             imageView.setPreserveRatio(true);
@@ -118,10 +125,27 @@ public class EmployeeManagementController {
         int selectedIndex = empTable.getSelectionModel().getSelectedIndex();
         String empId = data.get(selectedIndex).getEmpId();
         AddEmployeeController.setUpdateEmpId(empId);
+
         Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/employee/AddEmployee.fxml"))));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/employee/AddEmployee.fxml"));
+        Parent parent=fxmlLoader.load();
+        AddEmployeeController controller = fxmlLoader.getController();
+        controller.save.setVisible(false);
+        stage.setScene(new Scene(parent));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(employRegisterBtn.getScene().getWindow());
         stage.show();
+
+        /*FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/view/admin/AdminLogPage.fxml"));
+        adminLogPage = fxmlLoader2.load();
+        adminLogPagecontroller = fxmlLoader2.getController();
+        adminLoginScene = new Scene(adminLogPage);*/
+    }
+
+    public void saveEmployeeDetailsOnAction(ActionEvent actionEvent) {
+        FileChooser chooser = new FileChooser();
+        File file = chooser.showSaveDialog(empTable.getScene().getWindow());
+        String absolutePath = file.getParentFile().getAbsolutePath();
+
     }
 }

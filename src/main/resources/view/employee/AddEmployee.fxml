@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -10,27 +11,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="1350.0" stylesheets="@../../style/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.AddEmployeeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="1151.0" stylesheets="@../../style/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.AddEmployeeController">
    <children>
-      <AnchorPane fx:id="iDnumber" layoutX="1.0" prefHeight="562.0" prefWidth="1350.0">
+      <AnchorPane fx:id="iDnumber" layoutX="1.0" prefHeight="562.0" prefWidth="1141.0">
          <children>
             <Label layoutX="36.0" layoutY="149.0" prefHeight="27.0" prefWidth="149.0" styleClass="label1" text="gmail                   :" />
-            <Label layoutX="723.0" layoutY="147.0" styleClass="label1" text="Modile Number  :" />
+            <Label layoutX="588.0" layoutY="147.0" styleClass="label1" text="Modile Number  :" />
             <Label layoutX="36.0" layoutY="61.0" prefHeight="27.0" prefWidth="149.0" styleClass="label1" text="Employee ID       :">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
             <Label layoutX="36.0" layoutY="350.0" prefHeight="27.0" prefWidth="149.0" styleClass="label1" text="Address               :" />
-            <Label layoutX="723.0" layoutY="248.0" styleClass="label1" text="position               :" />
-            <JFXButton fx:id="arto" buttonType="RAISED" layoutX="629.0" layoutY="65.0" onAction="#artoOnAction" styleClass="arto" text="Arto" />
+            <Label layoutX="588.0" layoutY="248.0" styleClass="label1" text="position               :" />
             <Label layoutX="36.0" layoutY="250.0" styleClass="label1" text="ID Number          :" />
-            <Label layoutX="723.0" layoutY="66.0" styleClass="label1" text="Employee Name  :" />
-            <JFXButton fx:id="save" layoutX="1095.0" layoutY="468.0" onAction="#saveEmp" prefHeight="40.0" prefWidth="200.0" text="   Save">
+            <Label layoutX="588.0" layoutY="66.0" styleClass="label1" text="Employee Name  :" />
+            <JFXButton fx:id="save" layoutX="912.0" layoutY="461.0" onAction="#saveEmp" prefHeight="46.0" prefWidth="170.0" text="Add">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../img/icons8-ok-50.png" />
+                        <Image url="@../../img/icons8-add-48.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -38,16 +38,14 @@
                   <Font size="16.0" />
                </font>
             </JFXButton>
-            <Label layoutX="723.0" layoutY="347.0" styleClass="label1" text="Register Date      :" />
-            <TextField fx:id="empId" layoutX="200.0" layoutY="69.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="gmail" layoutX="200.0" layoutY="148.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="idNumber" layoutX="200.0" layoutY="249.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="empAddress" layoutX="200.0" layoutY="348.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="empName" layoutX="893.0" layoutY="65.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="empNumber" layoutX="893.0" layoutY="148.0" prefHeight="33.0" prefWidth="405.0" />
-            <TextField fx:id="date" layoutX="893.0" layoutY="348.0" prefHeight="33.0" prefWidth="312.0" />
-            <ComboBox fx:id="empPositionCombox" layoutX="893.0" layoutY="245.0" prefHeight="33.0" prefWidth="405.0" />
-            <JFXButton fx:id="updatebtn" layoutX="841.0" layoutY="470.0" onAction="#updateOnActin" prefHeight="40.0" prefWidth="200.0" text="Update">
+            <Label layoutX="588.0" layoutY="347.0" styleClass="label1" text="Register Date      :" />
+            <TextField fx:id="gmail" layoutX="200.0" layoutY="148.0" onKeyPressed="#velidetOnAction" prefHeight="33.0" prefWidth="339.0" />
+            <TextField fx:id="idNumber" layoutX="200.0" layoutY="249.0" onKeyPressed="#empIdNumberVelidetOnAction" prefHeight="33.0" prefWidth="339.0" />
+            <TextField fx:id="empAddress" layoutX="200.0" layoutY="348.0" onKeyPressed="#empAddressVelidetOnAction" prefHeight="33.0" prefWidth="339.0" />
+            <TextField fx:id="empName" layoutX="758.0" layoutY="65.0" onKeyPressed="#empNameVelidetOnAction" prefHeight="33.0" prefWidth="339.0" />
+            <TextField fx:id="empNumber" layoutX="758.0" layoutY="148.0" onKeyPressed="#empPhoneNumberVelidetOnAction" prefHeight="33.0" prefWidth="339.0" />
+            <ComboBox fx:id="empPositionCombox" layoutX="758.0" layoutY="245.0" prefHeight="33.0" prefWidth="339.0" />
+            <JFXButton fx:id="update" layoutX="897.0" layoutY="461.0" onAction="#updateOnActin" prefHeight="40.0" prefWidth="200.0" text="Update">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -59,6 +57,8 @@
                   <Font size="16.0" />
                </font>
             </JFXButton>
+            <DatePicker fx:id="date" layoutX="758.0" layoutY="348.0" prefHeight="33.0" prefWidth="216.0" />
+            <TextField fx:id="empId" layoutX="200.0" layoutY="63.0" prefHeight="33.0" prefWidth="339.0" />
          </children>
          <stylesheets>
             <URL value="@../../style/Employee.css" />

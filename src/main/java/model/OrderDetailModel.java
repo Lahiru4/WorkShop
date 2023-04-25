@@ -26,4 +26,5 @@ public class OrderDetailModel {
         return  CrudUtil.execute(sql,oId.getId(),dto.getItemCode(),dto.getQTY());
 
     }
+
 }

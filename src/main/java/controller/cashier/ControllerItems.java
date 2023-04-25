@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,8 +16,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.ItemsModel;
 import model.PlaceOrder;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -137,28 +140,69 @@ public class ControllerItems {
 
         }else {
             try {
-                String s = PlaceOrder.orderGetLastId();
+                String s = genOrderId();
                 Order order = new Order();
                 order.setId(s);
+                order.setCustomer_Id("CC007=DEMO");
                 boolean b = PlaceOrder.placeOrder(order, billTableData);
                 if (b){
-                    new Alert(Alert.AlertType.INFORMATION,"okay").showAndWait();
+
+                    Notifications.create()
+                            .graphic(new ImageView(new Image("/img/icons8-ok-48.png")))
+                            .text("order success ")
+                            .title("success")
+                            .hideAfter(Duration.seconds(5))
+                            .position(Pos.TOP_RIGHT)
+                            .show();
+
+                    billTableData.clear();
+                    billTable.refresh();
+
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/cashier/playBill.fxml"))));
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    stage.initOwner(table1.getScene().getWindow());
+                    stage.show();
+
+                }else {
+                    Notifications.create()
+                            .graphic(new ImageView(new Image("/img/icons8-fail-48.png")))
+                            .text("order Fail ")
+                            .title("success")
+                            .hideAfter(Duration.seconds(5))
+                            .position(Pos.TOP_RIGHT)
+                            .show();
                 }
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                Notifications.create()
+                        .graphic(new ImageView(new Image("/img/icons8-fail-48.png")))
+                        .text("order Fail ")
+                        .title("success")
+                        .hideAfter(Duration.seconds(5))
+                        .position(Pos.TOP_RIGHT)
+                        .show();
+                e.printStackTrace();
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
 
-
-
-            Stage stage = new Stage();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/cashier/playBill.fxml"))));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initOwner(table1.getScene().getWindow());
-            stage.show();
         }
     }
+
+    private String genOrderId() throws SQLException, ClassNotFoundException {
+        String lastId = PlaceOrder.orderGetLastId();
+        String id;
+        if (lastId.equals("")){
+            id= "ORD-001";
+        }else {
+            String[] split = lastId.split("[ORD][-]");
+            int i = Integer.parseInt(split[1]);
+            i++;
+            id=String.format("ORD-"+i);
+        }
+        return id;
+    }
+
 
 
     public void projectOnAction(ActionEvent actionEvent) {

@@ -14,23 +14,24 @@
 
 <AnchorPane fx:id="oderDashboard" prefHeight="1020.0" prefWidth="1710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.order.OrderdashboardformController">
    <children>
-      <TableView fx:id="orderTable" layoutX="63.0" layoutY="206.0" prefHeight="741.0" prefWidth="1302.0">
+      <TableView fx:id="orderTable" layoutX="74.0" layoutY="316.0" prefHeight="604.0" prefWidth="1552.0">
          <columns>
-            <TableColumn fx:id="orderID" prefWidth="139.0" text="Oder ID" />
-            <TableColumn fx:id="cusID" prefWidth="176.0" text="Customer ID" />
-            <TableColumn fx:id="placeDate" prefWidth="160.0" text="Placed order date" />
-            <TableColumn fx:id="returnDate" prefWidth="193.0" text="Return order date" />
-            <TableColumn fx:id="itemCost" prefWidth="173.66668701171875" text="Items cost" />
-            <TableColumn fx:id="workRent" prefWidth="195.00006103515625" text="work rent" />
-            <TableColumn fx:id="qID" prefWidth="250.0" text="Quotation ID" />
+            <TableColumn fx:id="orderID" prefWidth="168.3333282470703" text="Oder ID" />
+            <TableColumn fx:id="cusID" prefWidth="205.6666717529297" text="Customer ID" />
+            <TableColumn fx:id="placeDate" prefWidth="171.33331298828125" text="Placed order date" />
+            <TableColumn fx:id="returnDate" prefWidth="203.6666259765625" text="Return order date" />
+            <TableColumn fx:id="itemCost" prefWidth="186.0" text="Items cost" />
+            <TableColumn fx:id="workRent" prefWidth="262.0" text="work rent" />
+            <TableColumn fx:id="qID" prefWidth="232.6666259765625" text="Quotation ID" />
+            <TableColumn fx:id="qID1" prefWidth="111.666748046875" />
          </columns>
       </TableView>
-      <JFXButton fx:id="addoder" buttonType="RAISED" layoutX="1456.0" layoutY="314.0" onAction="#addOrderOnAction" prefHeight="64.0" prefWidth="222.0" text="Add Oder" AnchorPane.rightAnchor="63.0">
+      <JFXButton fx:id="addoder" buttonType="RAISED" layoutX="64.0" layoutY="204.0" onAction="#addOrderOnAction" prefHeight="41.0" prefWidth="222.0" text="Add Oder" AnchorPane.rightAnchor="1424.0">
          <font>
             <Font size="20.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/icons8-add-new-50.png" />
                </image>
@@ -51,12 +52,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="quotation" buttonType="RAISED" layoutX="1456.0" layoutY="429.0" onAction="#quotationOnAction" prefHeight="64.0" prefWidth="222.0" text="Quotation" AnchorPane.rightAnchor="63.0">
+      <JFXButton fx:id="quotation" buttonType="RAISED" layoutX="343.0" layoutY="204.0" onAction="#quotationOnAction" prefHeight="28.0" prefWidth="222.0" text="Quotation" AnchorPane.rightAnchor="1145.0">
          <font>
             <Font size="20.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/icons8-manual-page-rotation-48.png" />
                </image>
@@ -77,24 +78,24 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="print" buttonType="RAISED" layoutX="1421.0" layoutY="556.0" prefHeight="64.0" prefWidth="222.0" text="Print" AnchorPane.rightAnchor="63.0">
+      <JFXButton fx:id="print" buttonType="RAISED" layoutX="642.0" layoutY="204.0" prefHeight="9.0" prefWidth="222.0" text="Print" AnchorPane.rightAnchor="846.0">
          <font>
             <Font size="20.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/icons8-print-48.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="mail" buttonType="RAISED" layoutX="1426.0" layoutY="697.0" prefHeight="64.0" prefWidth="222.0" text="Mail" AnchorPane.rightAnchor="63.0">
+      <JFXButton fx:id="mail" buttonType="RAISED" layoutX="956.0" layoutY="204.0" prefHeight="4.0" prefWidth="222.0" text="Mail" AnchorPane.rightAnchor="532.0">
          <font>
             <Font size="20.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/icons8-send-email-48.png" />
                </image>
@@ -106,5 +107,6 @@
    <stylesheets>
       <URL value="@../../style/Customer.css" />
       <URL value="@../../style/AdminDashboar.css" />
+      <URL value="@../../style/Table.css" />
    </stylesheets>
 </AnchorPane>

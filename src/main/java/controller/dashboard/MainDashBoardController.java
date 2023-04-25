@@ -1,6 +1,7 @@
 package controller.dashboard;
 
 import com.jfoenix.controls.JFXButton;
+import controller.employee.EmployeeManagementController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -29,6 +30,7 @@ public class MainDashBoardController {
     public JFXButton employeeBtn;
     public JFXButton stockBtn;
     public AnchorPane manDash;
+    public static EmployeeManagementController employeeManafecontroller;
 
     public void initialize() throws IOException {
         homeBtn.getStyleClass().removeAll("orderBtn2");
@@ -153,9 +155,12 @@ public class MainDashBoardController {
     }
 
     public void onEmployee(ActionEvent actionEvent) throws IOException {
-        Node node = FXMLLoader.load(getClass().getResource("/view/employee/EmployeeManagement.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/view/employee/EmployeeManagement.fxml"));
+        Node load = fxmlLoader.load();
+        employeeManafecontroller = fxmlLoader.getController();
         manDash.getChildren().clear();
-        manDash.getChildren().addAll(node);
+        manDash.getChildren().addAll(load);
+
         employeeBtn.getStyleClass().removeAll("orderBtn2");
         employeeBtn.getStyleClass().add("orderBtn");
 

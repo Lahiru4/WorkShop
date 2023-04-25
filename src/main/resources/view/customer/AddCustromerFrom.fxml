@@ -20,7 +20,7 @@
       </Label>
       <Label layoutX="36.0" layoutY="406.0" prefHeight="27.0" prefWidth="149.0" styleClass="addCusLbl" text="Address               :" />
       <Label layoutX="36.0" layoutY="486.0" styleClass="addCusLbl" text="Gmail                   :" />
-      <JFXButton fx:id="arto" buttonType="RAISED" layoutX="655.0" layoutY="82.0" styleClass="arto" text="Arto" />
+      <JFXButton fx:id="arto" buttonType="RAISED" layoutX="655.0" layoutY="82.0" onAction="#cusIdArtoOnAction" styleClass="arto" text="Arto" />
       <JFXButton fx:id="save" layoutX="556.0" layoutY="568.0" onAction="#saveCustomer" prefHeight="46.0" prefWidth="166.0" text="   Save">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

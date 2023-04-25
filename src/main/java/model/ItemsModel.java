@@ -59,6 +59,7 @@ public class ItemsModel {
         return CrudUtil.execute("delete from items  where code = ?",itemCode);
     }
     public static boolean updateQty(List<Items> cartDTOList) throws SQLException, ClassNotFoundException {
+        System.out.println(cartDTOList.size());
         for (Items dto : cartDTOList) {
             if(!updateQty(dto)) {
                 return false;
@@ -71,5 +72,12 @@ public class ItemsModel {
         Connection con = DbConnection.getInstance().getConnection();
         boolean b = CrudUtil.execute("UPDATE items SET qty = (qty - ?) WHERE code = ?", dto.getQTY(), dto.getItemCode());
         return b;
+    }
+    public static String itemsGetLastCode() throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute("SELECT code FROM items ORDER BY code DESC LIMIT 1");
+        if (resultSet.next()) {
+            return String.valueOf(resultSet.getString(1));
+        }
+        return "";
     }
 }
