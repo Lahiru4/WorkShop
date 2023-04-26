@@ -18,6 +18,7 @@ public class AppInitializer extends Application {
         primaryStage.getIcons().add(new Image("img/icons8-shop-94.png"));
         primaryStage.centerOnScreen();
         primaryStage.show();
+        //-
         OrderModel.getSellsLineChartData();
     }
 }
