@@ -3,6 +3,7 @@
     -fx-border-color: black;
     -fx-font-size: 15;
     -fx-border-radius: 10;
+    -fx-background-radius: 10;
 }
 .combo-box {
     -fx-background-color: #ffffff;
@@ -10,12 +11,16 @@
     -fx-border-color: black;
     -fx-background-radius: 20;
 }
-#addimg,#arto,#save {
+#addimg,#arto,#save,#generateBarcodebtn {
     -fx-border-radius: 20;
     -fx-border-width: 2;
     -fx-border-color: #ffffff;
     -fx-background-radius: 20;
     -fx-background-color: #F8F5E4;
+}
+#barcodepan {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-border-color: black;
 }
 #newSupplierr {
     -fx-border-radius: 20;

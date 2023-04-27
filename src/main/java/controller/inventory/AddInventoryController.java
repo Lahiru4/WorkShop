@@ -1,5 +1,6 @@
 package controller.inventory;
 
+import barcode.Barcode_genarate;
 import com.jfoenix.controls.JFXButton;
 import dto.Items;
 import dto.Supplier;
@@ -40,11 +41,13 @@ public class AddInventoryController {
     public TextField supAddress;
     public TextField supnumber;
     public TextField supGmail;
+    public ImageView barCodeImageView;
     ObservableList<String> comData= FXCollections.observableArrayList();
     List<Supplier> all;
 
     public void initialize(){
-        supplierIdComBoxsetData();
+        supplierIdComBoxsetData();setItemCode();
+
     }
 
     public void addImg(ActionEvent actionEvent) {
@@ -93,5 +96,52 @@ public class AddInventoryController {
             throw new RuntimeException(e);
         }
 
+    }
+    public void setBarcodeImg(){
+        Barcode_genarate barcodeGenarate = new Barcode_genarate();
+        barcodeGenarate.createImage(description.getText()+".png",itemCode.getText());
+        Image img = barcodeGenarate.getImg();
+        barCodeImageView.setImage(img);
+    }
+
+    public void supplierIdComBoxOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void generateBarcodebtnOnAction(ActionEvent actionEvent) {
+
+        System.out.println(itemCode.getText());
+        System.out.println(description.getText());
+
+        if (itemCode.getText().equals("") || description.getText().equals("")){
+            new Alert(Alert.AlertType.ERROR,"please Fill description and itemCode").showAndWait();
+        }else {
+            setBarcodeImg();
+        }
+
+    }
+    private String genOrderId() throws SQLException, ClassNotFoundException {
+        String lastId = ItemsModel.itemsGetLastCode();
+        String id = "";
+        if (lastId==null){
+            id= "12341251";
+        }else {
+            String[] split = lastId.split("1234");
+            int i = Integer.parseInt(split[1]);
+            i++;
+            id = String.format("1234%04d",i);
+        }
+
+        return id;
+    }
+    public void setItemCode(){
+        try {
+            String s = genOrderId();
+            itemCode.setText(s);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

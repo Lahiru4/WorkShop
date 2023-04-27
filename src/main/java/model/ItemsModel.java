@@ -3,6 +3,7 @@ package model;
 import db.DbConnection;
 import dto.Items;
 import dto.tm.ItemsTM;
+import dto.tm.ItemsTMTM;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import util.CrudUtil;
@@ -78,6 +79,15 @@ public class ItemsModel {
         if (resultSet.next()) {
             return String.valueOf(resultSet.getString(1));
         }
-        return "";
+        return null;
     }
+    public static ItemsTMTM search(String itemCode) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM items WHERE code=?",itemCode);
+        if (resultSet.next()){
+            return new ItemsTMTM(null,resultSet.getString(2),Integer.parseInt(resultSet.getString(3))
+                    ,Double.parseDouble(resultSet.getString(4)),resultSet.getString(1),Double.parseDouble(resultSet.getString(5)),resultSet.getString(7));
+        }
+        return null;
+    }
+
 }

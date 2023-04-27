@@ -1,4 +1,4 @@
-package controller.report;
+package controller.report_from;
 
 public class ReportSubPagecontroller {
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="246.0" prefWidth="486.0" stylesheets="@../../style/Report.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.report.ReportSubPagecontroller">
+<AnchorPane prefHeight="246.0" prefWidth="486.0" stylesheets="@../../style/Report.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.report_from.ReportSubPagecontroller">
    <children>
       <AnchorPane fx:id="sideBar" layoutX="287.0" prefHeight="246.0" prefWidth="179.0" AnchorPane.rightAnchor="0.0">
          <children>

@@ -33,10 +33,9 @@ public class OrderModel {
         for (LocalDate temp:dates){
             String s = String.valueOf(temp);
             double tot = getTot(s);
-            System.out.println(tot);
+
             all.add(new WekLineChartData(s,tot));
         }
-        System.out.println(all.size());
         return all;
     }
 

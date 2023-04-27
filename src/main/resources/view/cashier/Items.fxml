@@ -2,12 +2,14 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -26,27 +28,20 @@
             <JFXComboBox layoutX="36.0" layoutY="102.0" prefHeight="31.0" prefWidth="295.0" />
             <TableView fx:id="billTable" layoutX="1140.0" layoutY="69.0" prefHeight="674.0" prefWidth="590.0" stylesheets="@../../style/MainTable.css">
                <columns>
-                  <TableColumn fx:id="billItemName" prefWidth="208.0" text="Item Name" />
-                  <TableColumn fx:id="bilItemSQTY" prefWidth="210.0" text="QTY" />
-                  <TableColumn fx:id="itemsPrice" prefWidth="158.0" text="Price" />
+                  <TableColumn fx:id="billItemName" prefWidth="177.3333740234375" text="Item Name" />
+                  <TableColumn fx:id="bilItemSQTY" prefWidth="164.333251953125" text="QTY" />
+                  <TableColumn fx:id="itemsPrice" prefWidth="159.666748046875" text="Price" />
+                  <TableColumn fx:id="itemsPrice1" prefWidth="73.0" />
                </columns>
             </TableView>
-            <AnchorPane fx:id="blc" layoutX="1277.0" layoutY="856.0" prefHeight="48.0" prefWidth="449.0">
-               <children>
-                  <JFXTextField layoutX="13.0" layoutY="8.0" prefHeight="12.0" prefWidth="424.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXTextField>
-               </children></AnchorPane>
-            <AnchorPane fx:id="pay" layoutX="1140.0" layoutY="777.0" prefHeight="62.0" prefWidth="586.0">
+            <AnchorPane fx:id="pay" layoutX="1140.0" layoutY="759.0" prefHeight="62.0" prefWidth="586.0">
                <children>
                   <Label layoutX="19.0" layoutY="2.0" prefHeight="60.0" prefWidth="70.0" text="PAY">
                      <font>
                         <Font name="System Bold" size="28.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalelbl" alignment="CENTER" layoutX="98.0" layoutY="13.0" onMouseClicked="#playBillOnAction" prefHeight="36.0" prefWidth="469.0" text="00">
+                  <Label fx:id="totalelbl" alignment="CENTER" layoutX="98.0" layoutY="13.0" prefHeight="36.0" prefWidth="469.0" text="00">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -56,13 +51,29 @@
             <TextField layoutX="37.0" layoutY="54.0" prefHeight="40.0" prefWidth="651.0" promptText="Search" />
             <TableView fx:id="table1" layoutX="118.0" layoutY="158.0" onMouseClicked="#addItemOnAction" prefHeight="839.0" prefWidth="872.0">
                <columns>
-                  <TableColumn fx:id="img1" prefWidth="252.66665649414062" />
-                  <TableColumn fx:id="name" prefWidth="378.3333435058594" />
-                  <TableColumn fx:id="qty" prefWidth="238.66668701171875" />
-                  <TableColumn fx:id="img11" prefWidth="252.66665649414062" text="IMG" />
+                  <TableColumn fx:id="img1" prefWidth="210.33334350585938" />
+                  <TableColumn fx:id="name" prefWidth="496.6666564941406" />
+                  <TableColumn fx:id="qty" prefWidth="164.33331298828125" />
                </columns>
             </TableView>
-            <RadioButton fx:id="project" layoutX="1159.0" layoutY="868.0" mnemonicParsing="false" onAction="#projectOnAction" text="Project" />
+            <RadioButton fx:id="project" layoutX="1160.0" layoutY="871.0" mnemonicParsing="false" onAction="#projectOnAction" text="Project" />
+            <JFXButton fx:id="paySalls" buttonType="RAISED" layoutX="1278.0" layoutY="957.0" onMouseClicked="#playBillOnAction" prefHeight="48.0" prefWidth="440.0" text="Pay" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/img_3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <TextField layoutX="1278.0" layoutY="859.0" prefHeight="48.0" prefWidth="440.0" stylesheets="@../../style/TexFeld.css">
+               <effect>
+                  <DropShadow color="#b5a5a5" />
+               </effect>
+            </TextField>
          </children>
       </AnchorPane>
    </children>

@@ -12,18 +12,21 @@ public class AddCartController {
     public TextField entQty;
     public Label qty;
     public void initialize(){
+        if(itemsTMTM1==null)return;
         qty.setText(String.valueOf(itemsTMTM1.getQty()));
     }
 
     public static void setItemsTMTM(ItemsTMTM itemsTMTM) {
         itemsTMTM1 = itemsTMTM;
     }
+
     public void addtobtnOnAction(ActionEvent actionEvent) {
         Window window = qty.getScene().getWindow();
         if (Integer.valueOf(entQty.getText())>0 && Integer.valueOf(qty.getText()) > Integer.valueOf(entQty.getText())) {
             ControllerItems.setEnterQty(Integer.valueOf(entQty.getText()));
+            ControllerItems.setItemsTMTM(itemsTMTM1);
         }else {
-            new Alert(Alert.AlertType.ERROR,"Invalid Input ").showAndWait();
+            new Alert(Alert.AlertType.ERROR,"Invalid Input").showAndWait();
         }
         window.hide();
     }

@@ -1,21 +1,30 @@
 package controller.cashier;
 
+import com.jfoenix.controls.JFXButton;
+import controller.barcodeReade.BarcodeReadController;
 import dto.Order;
+import dto.tm.ItemTM2;
 import dto.tm.ItemsTM;
 import dto.tm.ItemsTMTM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import model.ItemsModel;
 import model.PlaceOrder;
@@ -35,7 +44,7 @@ public class ControllerItems {
     public TableColumn bilItemSQTY;
     public TableColumn itemsPrice;
     public static int enterQty;
-    public ItemsTMTM itemsTMTM;
+    public static ItemsTMTM itemsTMTM;
     public int selectedIndex;
     public Label totalelbl;
     public RadioButton project;
@@ -44,17 +53,18 @@ public class ControllerItems {
     public static void setEnterQty(int enterQty) {
         ControllerItems.enterQty = enterQty;
     }
+    public static void setItemsTMTM(ItemsTMTM itemsTMTM) {
+        ControllerItems.itemsTMTM = itemsTMTM;
+    }
 
     ObservableList<ItemsTMTM> data = FXCollections.observableArrayList();
-    ObservableList<ItemsTMTM> billTableData = FXCollections.observableArrayList();
-
+    ObservableList<ItemTM2> billTableData = FXCollections.observableArrayList();
     public void initialize() {
         setCellValueFactory();
         setTableData();
         setCellValueFactoryBillTable();
 
     }
-
     private void setCellValueFactory() {
         img1.setCellValueFactory(new PropertyValueFactory<>("img"));
         name.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -110,7 +120,12 @@ public class ControllerItems {
     }
 
     private void setBillItems() {
-        billTableData.add(new ItemsTMTM(itemsTMTM.getDescription(), enterQty, itemsTMTM.getSallingPrice() * enterQty,itemsTMTM.getItemCode(),itemsTMTM.getPurchase_price(),itemsTMTM.getSuppler_Id()));
+        JFXButton button=new JFXButton();
+        button.setText("Delete");
+        button.setStyle("-fx-border-radius: 15");
+        button.setStyle("-fx-background-color: #ffffff");
+        button.setStyle("-fx-border-color: #000000");
+        billTableData.add(new ItemTM2(itemsTMTM.getDescription(), enterQty, itemsTMTM.getSallingPrice(),itemsTMTM.getItemCode(),itemsTMTM.getPurchase_price(),itemsTMTM.getSuppler_Id(),button));
         billTable.setItems(billTableData);
         billTable.refresh();
     }
@@ -124,10 +139,26 @@ public class ControllerItems {
 
     public void barCodeCamOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/barcodeReade/BarcodeRead.fxml"))));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/barcodeReade/BarcodeRead.fxml"));
+        Parent load = fxmlLoader.load();
+        stage.setScene(new Scene(load));
+        BarcodeReadController controller = fxmlLoader.getController();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(table1.getScene().getWindow());
-        stage.show();
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                controller.getService().cancel();
+            }
+        });
+
+        stage.showAndWait();
+
+        if (enterQty > 0) {
+            setBillItems();
+            calTotale();
+        }
+
     }
 
     public void playBillOnAction(MouseEvent mouseEvent) throws IOException {
@@ -189,7 +220,7 @@ public class ControllerItems {
         }
     }
 
-    private String genOrderId() throws SQLException, ClassNotFoundException {
+    /*private String genOrderId() throws SQLException, ClassNotFoundException {
         String lastId = PlaceOrder.orderGetLastId();
         String id;
         if (lastId.equals("")){
@@ -200,6 +231,20 @@ public class ControllerItems {
             i++;
             id=String.format("ORD-"+i);
         }
+        return id;
+    }*/
+    private String genOrderId() throws SQLException, ClassNotFoundException {
+        String lastId = PlaceOrder.orderGetLastId();
+        String id;
+        if (lastId==null){
+            id= "ORD-0001";
+        }else {
+            String[] split = lastId.split("[ORD][-]");
+            int i = Integer.parseInt(split[1]);
+            i++;
+            id = String.format("ORD-%04d",i);
+        }
+
         return id;
     }
 

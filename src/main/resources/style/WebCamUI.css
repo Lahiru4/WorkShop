@@ -1,0 +1,10 @@
+#pane {
+    -fx-background-color: rgba(5, 6, 6, 0.79);
+}
+#btnStart,#btnStop{
+    -fx-background-color: #f8f5e4;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2;
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+}

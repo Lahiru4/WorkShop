@@ -27,14 +27,14 @@
          </font>
       </Label>
       <Label layoutX="764.0" layoutY="90.0" prefHeight="30.0" prefWidth="466.0" />
-      <JFXButton fx:id="orderPay" layoutX="1035.0" layoutY="544.0" onAction="#saveOrder" prefHeight="33.0" prefWidth="156.0" text="Pay" textFill="WHITE">
+      <JFXButton fx:id="orderPay" layoutX="1035.0" layoutY="544.0" onAction="#saveOrder" prefHeight="33.0" prefWidth="156.0" text="Add Order" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../img/img_3.png" />
+                  <Image url="@../../img/icons8-add-48.png" />
                </image>
             </ImageView>
          </graphic>

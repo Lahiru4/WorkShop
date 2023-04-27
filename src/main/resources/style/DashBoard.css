@@ -14,6 +14,10 @@
     -fx-background-color: rgb(143, 67, 238);
     -fx-background-radius: 10;
 }
+#paySalls {
+    -fx-background-color: #635985;
+    -fx-background-radius: 10;
+}
 #blc {
     -fx-border-color: #2D2727;
     -fx-border-radius: 10;

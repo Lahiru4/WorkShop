@@ -3,7 +3,7 @@ package model;
 import db.DbConnection;
 import dto.Items;
 import dto.Order;
-import dto.tm.ItemsTMTM;
+import dto.tm.ItemTM2;
 import javafx.collections.ObservableList;
 import util.CrudUtil;
 
@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlaceOrder {
-    public static boolean placeOrder(Order order, ObservableList<ItemsTMTM> billTableData) {
+    public static boolean placeOrder(Order order, ObservableList<ItemTM2> billTableData) {
         double tot=0;
-        for (ItemsTMTM temp:billTableData){
+        for (ItemTM2 temp:billTableData){
             double sallingPrice = temp.getSallingPrice();
             tot+=sallingPrice;
         }
@@ -32,7 +32,7 @@ public class PlaceOrder {
             boolean b = CrudUtil.execute("INSERT INTO orders(Id, description, order_date, return_date,work_rent,item_cost,customer_Id) VALUES(?, ?, ?,?,?,?,?)", i, null, date, null, null, tot,order.getCustomer_Id());
             List<Items> data = new ArrayList<>();
             System.out.println(billTableData.size());
-            for (ItemsTMTM temp : billTableData) {
+            for (ItemTM2 temp : billTableData) {
                 data.add(new Items(temp.getItemCode(), temp.getDescription(), temp.getQty(), temp.getSallingPrice(),
                         temp.getPurchase_price(), null, temp.getSuppler_Id()));
                 }
@@ -57,6 +57,6 @@ public class PlaceOrder {
         if (resultSet.next()) {
             return String.valueOf(resultSet.getString(1));
         }
-        return "";
+        return null;
     }
 }

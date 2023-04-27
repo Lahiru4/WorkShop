@@ -45,9 +45,9 @@ public class EmployeeManagementController {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/employee/AddEmployee.fxml"));
         Parent parent=fxmlLoader.load();
+        stage.setScene(new Scene(parent));
         AddEmployeeController controller = fxmlLoader.getController();
         controller.update.setVisible(false);
-        stage.setScene(new Scene(parent));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(employRegisterBtn.getScene().getWindow());
         stage.show();
