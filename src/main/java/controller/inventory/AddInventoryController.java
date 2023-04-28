@@ -109,10 +109,6 @@ public class AddInventoryController {
     }
 
     public void generateBarcodebtnOnAction(ActionEvent actionEvent) {
-
-        System.out.println(itemCode.getText());
-        System.out.println(description.getText());
-
         if (itemCode.getText().equals("") || description.getText().equals("")){
             new Alert(Alert.AlertType.ERROR,"please Fill description and itemCode").showAndWait();
         }else {

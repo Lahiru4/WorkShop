@@ -18,7 +18,7 @@
 
 <AnchorPane fx:id="mandash" prefHeight="4300.0" prefWidth="1690.0" stylesheets="@../style/DashBoard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Temp">
    <children>
-      <AnchorPane fx:id="mandash1" layoutX="8.0" layoutY="-4.0" prefHeight="6000.0" prefWidth="1690.0" stylesheets="@../style/DashBoard.css">
+      <AnchorPane fx:id="mandash1" prefHeight="6000.0" prefWidth="1690.0" stylesheets="@../style/DashBoard.css">
          <children>
             <AnchorPane fx:id="emplbl" layoutX="73.0" layoutY="434.0" prefHeight="103.0" prefWidth="422.0" styleClass="btn-grad">
                <children>
@@ -47,12 +47,12 @@
                   <DropShadow color="#615b5b" />
                </effect>
             </AnchorPane>
-            <AnchorPane fx:id="sals" layoutX="74.0" layoutY="679.0" prefHeight="621.0" prefWidth="975.0">
+            <AnchorPane fx:id="sals" layoutX="112.0" layoutY="679.0" prefHeight="621.0" prefWidth="1456.0">
                <effect>
                   <DropShadow color="#a19e9e" />
                </effect>
                <children>
-                  <LineChart fx:id="lineChartSalles" layoutX="20.0" layoutY="174.0" prefHeight="412.0" prefWidth="929.0">
+                  <LineChart fx:id="lineChartSalles" layoutX="46.0" layoutY="174.0" prefHeight="412.0" prefWidth="1357.0">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -60,7 +60,7 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </LineChart>
-                  <AnchorPane fx:id="salhedlbl" prefHeight="69.0" prefWidth="975.0">
+                  <AnchorPane prefHeight="69.0" prefWidth="1456.0" styleClass="hedar">
                      <children>
                         <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="198.0" styleClass="label2" text="Sales " />
                      </children>
@@ -70,7 +70,7 @@
                         <Font size="20.0" />
                      </font>
                   </JFXTextField>
-                  <ComboBox layoutX="656.0" layoutY="102.0" prefHeight="32.0" prefWidth="244.0" />
+                  <ComboBox fx:id="salesTimeCombox" layoutX="1081.0" layoutY="102.0" prefHeight="32.0" prefWidth="244.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="rlbl" layoutX="561.0" layoutY="3837.0" prefHeight="869.0" prefWidth="1033.0">
@@ -126,52 +126,52 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <AnchorPane fx:id="sals" layoutX="1115.0" layoutY="679.0" prefHeight="621.0" prefWidth="519.0">
+            <AnchorPane layoutX="112.0" layoutY="1383.0" prefHeight="621.0" prefWidth="1456.0" styleClass="sals">
                <effect>
                   <DropShadow color="#a19e9e" />
                </effect>
                <children>
-                  <LineChart fx:id="lineChartSalles1" layoutX="17.0" layoutY="181.0" prefHeight="395.0" prefWidth="471.0">
+                  <AnchorPane prefHeight="69.0" prefWidth="1456.0" styleClass="hedar">
+                     <children>
+                        <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="300.0" styleClass="label2" text="Sales QTY" />
+                     </children>
+                  </AnchorPane>
+                  <JFXTextField editable="false" focusColor="#3f497f" layoutX="71.0" layoutY="97.0" prefHeight="44.0" prefWidth="402.0" text="00" unFocusColor="BLACK">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <BarChart fx:id="salesQtybarChart" layoutX="66.0" layoutY="169.0" prefHeight="424.0" prefWidth="1340.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="yAxis" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="202.0" layoutY="2624.0" prefHeight="718.0" prefWidth="968.0" styleClass="sals">
+               <effect>
+                  <DropShadow color="#a19e9e" />
+               </effect>
+               <children>
+                  <AnchorPane prefHeight="69.0" prefWidth="968.0" styleClass="hedar">
+                     <children>
+                        <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="198.0" styleClass="label2" text="Customer Base" />
+                     </children>
+                  </AnchorPane>
+                  <BarChart layoutX="33.0" layoutY="136.0" prefHeight="531.0" prefWidth="902.0">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
                      <yAxis>
                         <NumberAxis side="LEFT" />
                      </yAxis>
-                  </LineChart>
-                  <AnchorPane fx:id="salhedlbl" prefHeight="69.0" prefWidth="519.0">
-                     <children>
-                        <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="300.0" styleClass="label2" text="Sales QTY" />
-                     </children>
-                  </AnchorPane>
-                  <JFXTextField editable="false" focusColor="#3f497f" layoutX="31.0" layoutY="97.0" prefHeight="44.0" prefWidth="402.0" text="00" unFocusColor="BLACK">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </JFXTextField>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="sals" layoutX="78.0" layoutY="1382.0" prefHeight="718.0" prefWidth="968.0">
-               <effect>
-                  <DropShadow color="#a19e9e" />
-               </effect>
-               <children>
-                  <AnchorPane fx:id="salhedlbl" prefHeight="69.0" prefWidth="968.0">
-                     <children>
-                        <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="198.0" styleClass="label2" text="Customer Base" />
-                     </children>
-                  </AnchorPane>
-                  <BarChart layoutX="33.0" layoutY="136.0" prefHeight="531.0" prefWidth="902.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
                   </BarChart>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="sideBarChat" layoutX="1009.0" layoutY="3193.0" prefHeight="601.0" prefWidth="645.0">
+            <AnchorPane layoutX="1009.0" layoutY="3193.0" prefHeight="601.0" prefWidth="645.0" styleClass="sals">
                <effect>
                   <DropShadow color="#a19e9e" />
                </effect>
@@ -184,7 +184,7 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </BarChart>
-                  <AnchorPane fx:id="employshed" layoutX="-2.0" layoutY="-1.0" prefHeight="69.0" prefWidth="649.0">
+                  <AnchorPane layoutX="-2.0" layoutY="-1.0" prefHeight="69.0" prefWidth="649.0" styleClass="hedar">
                      <children>
                         <Label layoutX="47.0" layoutY="13.0" styleClass="label2" text="Profit" />
                      </children>
@@ -196,9 +196,9 @@
                   <TableColumn prefWidth="462.0" text="Runing Order" />
                </columns>
             </TableView>
-            <AnchorPane fx:id="rlbl" layoutX="88.0" layoutY="4892.0" prefHeight="998.0" prefWidth="1512.0">
+            <AnchorPane layoutX="88.0" layoutY="4892.0" prefHeight="998.0" prefWidth="1512.0" styleClass="sals">
                <children>
-                  <AnchorPane fx:id="rhedar" layoutX="1.0" prefHeight="321.0" prefWidth="1521.0">
+                  <AnchorPane layoutX="1.0" prefHeight="321.0" prefWidth="1521.0" styleClass="hedar">
                      <children>
                         <Label layoutX="52.0" layoutY="7.0" prefHeight="58.0" prefWidth="420.0" text="Research Products">
                            <font>

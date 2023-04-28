@@ -52,7 +52,9 @@ public class OrderdashboardformController {
                         order.getCusAddress(),
                         order.getCusGmail(),
                         "SS002"
+
                 ));
+                //sup
             }
             orderTable.setItems(obList);
         } catch (SQLException e) {

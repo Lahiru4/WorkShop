@@ -120,7 +120,7 @@ public class AddEmployeeController {
     public void setEmpId() {
         try {
             String s = jenEmpId();
-            gmail.setText(s);
+            empId.setText(s);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

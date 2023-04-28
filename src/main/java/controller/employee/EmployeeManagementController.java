@@ -18,6 +18,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.EmployeeModel;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.IOException;
@@ -143,9 +147,67 @@ public class EmployeeManagementController {
     }
 
     public void saveEmployeeDetailsOnAction(ActionEvent actionEvent) {
-        FileChooser chooser = new FileChooser();
+        /*FileChooser chooser = new FileChooser();
         File file = chooser.showSaveDialog(empTable.getScene().getWindow());
-        String absolutePath = file.getParentFile().getAbsolutePath();
+        String absolutePath = file.getParentFile().getAbsolutePath();*/
+
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("Data");
+
+        //ObservableList<TaxTM> data = tableTax.getItems();
+        List<Employee> all = EmployeeModel.getAll();
+
+        for (int i = 0; i < all.size(); i++) {
+            Employee rowData = all.get(i);
+            Row row = sheet.createRow(i);
+            Cell cell = row.createCell(0);
+            cell.setCellValue(rowData.getEmpId());
+
+            Cell cell1 = row.createCell(1);
+            cell1.setCellValue(rowData.getEmpName());
+
+            Cell cell2 = row.createCell(2);
+            cell2.setCellValue(rowData.getNumber());
+
+            Cell cell3 = row.createCell(3);
+            cell2.setCellValue(rowData.getID_number());
+
+            Cell cell4 = row.createCell(4);
+            cell2.setCellValue(rowData.getRegister_date());
+
+            Cell cell5 = row.createCell(5);
+            cell2.setCellValue(rowData.getPosition());
+
+            Cell cell6 = row.createCell(6);
+            cell2.setCellValue(rowData.getAddress());
+
+            Cell cell7 = row.createCell(7);
+            cell2.setCellValue(rowData.getGmail());
+
+            /*Cell cell1 = row.createCell(0);
+            *//*cell1.setCellValue(rowData.getId());*//*
+
+            Cell cell2 = row.createCell(1);
+            *//*cell2.setCellValue(rowData.getName());*//*
+
+            Cell cell3 = row.createCell(2);
+            *//*cell3.setCellValue(rowData.getPercentage());*//*
+
+            Cell cell4 = row.createCell(3);
+            *//*cell4.setCellValue(rowData.getDescription());*/
+
+        }
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Excel File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Excel Files", "*.xlsx"),
+                new FileChooser.ExtensionFilter("All Files", "*.*")
+        );
+        File file = fileChooser.showSaveDialog(employRegisterBtn.getScene().getWindow());
+        if (file == null) {
+
+        }
 
     }
 }

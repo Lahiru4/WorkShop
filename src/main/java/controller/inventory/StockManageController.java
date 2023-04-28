@@ -108,4 +108,12 @@ public class StockManageController {
         supplierId.setCellValueFactory(new PropertyValueFactory<>("suppler_Id"));
         action.setCellValueFactory(new PropertyValueFactory<>("button"));
     }
+
+    public void supplierdetailsOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/supplierdetails/SupplierDetails.fxml"))));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(stockManage.getScene().getWindow());
+        stage.show();
+    }
 }

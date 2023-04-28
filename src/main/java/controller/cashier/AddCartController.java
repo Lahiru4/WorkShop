@@ -9,8 +9,16 @@ import javafx.stage.Window;
 
 public class AddCartController {
     public static ItemsTMTM itemsTMTM1;
+
+
+
+    public static ControllerItems controllerItems;
     public TextField entQty;
     public Label qty;
+    public static void setControllerItems(ControllerItems controllerItems) {
+        AddCartController.controllerItems = controllerItems;
+    }
+
     public void initialize(){
         if(itemsTMTM1==null)return;
         qty.setText(String.valueOf(itemsTMTM1.getQty()));
@@ -25,6 +33,9 @@ public class AddCartController {
         if (Integer.valueOf(entQty.getText())>0 && Integer.valueOf(qty.getText()) > Integer.valueOf(entQty.getText())) {
             ControllerItems.setEnterQty(Integer.valueOf(entQty.getText()));
             ControllerItems.setItemsTMTM(itemsTMTM1);
+            if (controllerItems!=null){
+                controllerItems.setBillTableDataCall();
+            }
         }else {
             new Alert(Alert.AlertType.ERROR,"Invalid Input").showAndWait();
         }

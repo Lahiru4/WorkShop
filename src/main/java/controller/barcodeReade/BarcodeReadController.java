@@ -3,11 +3,13 @@ package controller.barcodeReade;
 import com.github.sarxos.webcam.Webcam;
 import com.jfoenix.controls.JFXButton;
 import controller.cashier.AddCartController;
+import controller.cashier.ControllerItems;
 import dto.tm.ItemsTMTM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
@@ -36,6 +38,7 @@ public class BarcodeReadController {
     @FXML
     private JFXButton btnStop;
     private WebcamService service;
+    private ControllerItems controllerItems;
 
 
     @FXML
@@ -81,13 +84,17 @@ public class BarcodeReadController {
                 Stage stage = new Stage();
                 try {
                     ItemsTMTM search = ItemsModel.search(readBarCodeId);
+                    if (search==null){
+                        new Alert(Alert.AlertType.ERROR," DON NOT HAVE ").show();
+                        return ;
+                    }
                     AddCartController.setItemsTMTM(search);
-
-
+                    AddCartController.setControllerItems(controllerItems);
                     stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/cashier/AddCart.fxml"))));
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.initOwner(imageView.getScene().getWindow());
                     stage.show();
+                    //
 
 
                 } catch (IOException e) {
@@ -101,18 +108,6 @@ public class BarcodeReadController {
             }
             second.setWidth(main.getWidth() * c.doubleValue());
         });
-
-        /*service.messageProperty().addListener((a,old,c) -> {
-            if(c!=null){
-                if(old==null){
-                    System.out.println(c);
-
-                }else
-                if(!old.equals(c)) {
-                    //
-                }
-            }
-        });*/
         startRead();
     }
 
@@ -124,5 +119,9 @@ public class BarcodeReadController {
 
     public WebcamService getService() {
         return service;
+    }
+
+    public void setControllerItem(ControllerItems controllerItems) {
+        this.controllerItems=controllerItems;
     }
 }

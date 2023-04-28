@@ -32,6 +32,7 @@ import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ControllerItems {
@@ -49,22 +50,33 @@ public class ControllerItems {
     public Label totalelbl;
     public RadioButton project;
     public boolean selected;
+    public TableColumn action;
 
     public static void setEnterQty(int enterQty) {
         ControllerItems.enterQty = enterQty;
     }
+
     public static void setItemsTMTM(ItemsTMTM itemsTMTM) {
         ControllerItems.itemsTMTM = itemsTMTM;
     }
 
     ObservableList<ItemsTMTM> data = FXCollections.observableArrayList();
     ObservableList<ItemTM2> billTableData = FXCollections.observableArrayList();
+
+    public void setBillTableDataCall() {
+        if (enterQty > 0) {
+            setBillItems();
+            calTotale();
+        }
+    }
+
     public void initialize() {
         setCellValueFactory();
         setTableData();
         setCellValueFactoryBillTable();
 
     }
+
     private void setCellValueFactory() {
         img1.setCellValueFactory(new PropertyValueFactory<>("img"));
         name.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -82,7 +94,7 @@ public class ControllerItems {
                 img.setFitWidth(100);
                 img.setImage(img1);
                 String description = tem.getDescription();
-                data.add(new ItemsTMTM(img, description, tem.getQTY(), tem.getSelling_price(),tem.getItemCode()));
+                data.add(new ItemsTMTM(img, description, tem.getQTY(), tem.getSelling_price(), tem.getItemCode()));
             }
             table1.setItems(data);
         } catch (SQLException e) {
@@ -102,11 +114,11 @@ public class ControllerItems {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(table1.getScene().getWindow());
         stage.showAndWait();
-
         if (enterQty > 0) {
             setBillItems();
             calTotale();
         }
+
     }
 
     private void calTotale() {
@@ -120,14 +132,20 @@ public class ControllerItems {
     }
 
     private void setBillItems() {
+        Image img=new Image("/img/icons8-delete-100.png");
+        ImageView imageView=new ImageView(img);
+        imageView.setFitHeight(30);
+        imageView.setPreserveRatio(true);
         JFXButton button=new JFXButton();
-        button.setText("Delete");
-        button.setStyle("-fx-border-radius: 15");
-        button.setStyle("-fx-background-color: #ffffff");
-        button.setStyle("-fx-border-color: #000000");
-        billTableData.add(new ItemTM2(itemsTMTM.getDescription(), enterQty, itemsTMTM.getSallingPrice(),itemsTMTM.getItemCode(),itemsTMTM.getPurchase_price(),itemsTMTM.getSuppler_Id(),button));
+        button.setGraphic(imageView);
+        billTableData.add(new ItemTM2(itemsTMTM.getDescription(), enterQty, itemsTMTM.getSallingPrice(), itemsTMTM.getItemCode(), itemsTMTM.getPurchase_price(), itemsTMTM.getSuppler_Id(), button));
         billTable.setItems(billTableData);
         billTable.refresh();
+        setRemoveBtnOnAction(button);
+    }
+
+    private void setRemoveBtnOnAction(JFXButton button) {
+
     }
 
 
@@ -135,6 +153,7 @@ public class ControllerItems {
         billItemName.setCellValueFactory(new PropertyValueFactory<>("description"));
         bilItemSQTY.setCellValueFactory(new PropertyValueFactory<>("qty"));
         itemsPrice.setCellValueFactory(new PropertyValueFactory<>("sallingPrice"));
+        action.setCellValueFactory(new PropertyValueFactory<>("button"));
     }
 
     public void barCodeCamOnAction(ActionEvent actionEvent) throws IOException {
@@ -145,38 +164,33 @@ public class ControllerItems {
         BarcodeReadController controller = fxmlLoader.getController();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(table1.getScene().getWindow());
+        controller.setControllerItem(this);
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent windowEvent) {
                 controller.getService().cancel();
             }
         });
-
-        stage.showAndWait();
-
-        if (enterQty > 0) {
-            setBillItems();
-            calTotale();
-        }
-
+        stage.show();
     }
 
     public void playBillOnAction(MouseEvent mouseEvent) throws IOException {
-        if (selected){
+        if (selected) {
             Stage stage = new Stage();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order/AddOder.fxml"))));
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initOwner(table1.getScene().getWindow());
             stage.show();
 
-        }else {
+        } else {
             try {
+                String date = String.valueOf(LocalDate.now());
                 String s = genOrderId();
-                Order order = new Order();
-                order.setId(s);
-                order.setCustomer_Id("CC007=DEMO");
+
+                Order order = new Order(s,"",date,"0000-00-00",00,00,"CC007=DEMO");
+
                 boolean b = PlaceOrder.placeOrder(order, billTableData);
-                if (b){
+                if (b) {
 
                     Notifications.create()
                             .graphic(new ImageView(new Image("/img/icons8-ok-48.png")))
@@ -188,18 +202,18 @@ public class ControllerItems {
 
                     billTableData.clear();
                     billTable.refresh();
-
+                    PlayBillController.setOrId(s);
                     Stage stage = new Stage();
                     stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/cashier/playBill.fxml"))));
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.initOwner(table1.getScene().getWindow());
                     stage.show();
 
-                }else {
+                } else {
                     Notifications.create()
                             .graphic(new ImageView(new Image("/img/icons8-fail-48.png")))
                             .text("order Fail ")
-                            .title("success")
+                            .title("Fail")
                             .hideAfter(Duration.seconds(5))
                             .position(Pos.TOP_RIGHT)
                             .show();
@@ -208,7 +222,7 @@ public class ControllerItems {
                 Notifications.create()
                         .graphic(new ImageView(new Image("/img/icons8-fail-48.png")))
                         .text("order Fail ")
-                        .title("success")
+                        .title("Fail")
                         .hideAfter(Duration.seconds(5))
                         .position(Pos.TOP_RIGHT)
                         .show();
@@ -219,35 +233,20 @@ public class ControllerItems {
 
         }
     }
-
-    /*private String genOrderId() throws SQLException, ClassNotFoundException {
-        String lastId = PlaceOrder.orderGetLastId();
-        String id;
-        if (lastId.equals("")){
-            id= "ORD-001";
-        }else {
-            String[] split = lastId.split("[ORD][-]");
-            int i = Integer.parseInt(split[1]);
-            i++;
-            id=String.format("ORD-"+i);
-        }
-        return id;
-    }*/
     private String genOrderId() throws SQLException, ClassNotFoundException {
         String lastId = PlaceOrder.orderGetLastId();
         String id;
-        if (lastId==null){
-            id= "ORD-0001";
-        }else {
+        if (lastId == null) {
+            id = "ORD-0001";
+        } else {
             String[] split = lastId.split("[ORD][-]");
             int i = Integer.parseInt(split[1]);
             i++;
-            id = String.format("ORD-%04d",i);
+            id = String.format("ORD-%04d", i);
         }
 
         return id;
     }
-
 
 
     public void projectOnAction(ActionEvent actionEvent) {

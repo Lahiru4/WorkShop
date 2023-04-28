@@ -33,14 +33,13 @@ public class OrderModel {
         for (LocalDate temp:dates){
             String s = String.valueOf(temp);
             double tot = getTot(s);
-
             all.add(new WekLineChartData(s,tot));
         }
         return all;
     }
 
     private static double getTot(String s) {
-        double tot=0;
+        double tot=10;
         String SUQ="SELECT item_cost FROM orders WHERE order_date=?";
         try {
             ResultSet resultSet= CrudUtil.execute(SUQ,s);

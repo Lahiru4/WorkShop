@@ -39,7 +39,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="supplierBtn" buttonType="RAISED" layoutX="301.0" layoutY="158.0" text="Supplier details">
+      <JFXButton fx:id="supplierBtn" buttonType="RAISED" layoutX="301.0" layoutY="158.0" onAction="#supplierdetailsOnAction" text="Supplier details">
          <font>
             <Font size="20.0" />
          </font>

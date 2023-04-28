@@ -1,4 +1,11 @@
-
+.sals {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25;
+}
+.hedar {
+    -fx-background-color: linear-gradient(to bottom, rgba(52, 246, 217, 0.59) 0%, #ccccff 80%);
+    -fx-background-radius: 25 25 0 0;
+}
 #homebtn ,#options{
     -fx-background-radius: 25;
     -fx-border-radius: 25;

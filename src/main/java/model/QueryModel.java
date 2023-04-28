@@ -28,17 +28,17 @@ public class QueryModel {
 
         while (resultSet.next() && resultSet1.next()) {
             String orderId = resultSet.getString(1);
-            String orderDescription = resultSet.getString(2);
-            Date orderDate = resultSet.getDate(3);
-            Date returnOrderDate = resultSet.getDate(4);
-            double workRent = resultSet.getDouble(5);
-            double itemCost = resultSet.getDouble(6);
-            String cusId = resultSet.getString(7);
+            //String orderDescription = resultSet.getString(2);
+            Date orderDate = resultSet.getDate(2);
+            Date returnOrderDate = resultSet.getDate(3);
+            double workRent = resultSet.getDouble(4);
+            double itemCost = resultSet.getDouble(5);
+            String cusId = resultSet.getString(6);
             String cusName = resultSet1.getString(2);
             String cusPhoneNumber = resultSet1.getString(3);
             String cusAddress = resultSet1.getString(4);
             String cusGmail = resultSet1.getString(5);
-            OrderCustomerQuotationJoinDto newData = new OrderCustomerQuotationJoinDto(orderId, orderDescription, orderDate, returnOrderDate, workRent, itemCost, cusId, cusName, cusPhoneNumber, cusAddress, cusGmail,"ss");
+            OrderCustomerQuotationJoinDto newData = new OrderCustomerQuotationJoinDto(orderId, "orderDescription", orderDate, returnOrderDate, workRent, itemCost, cusId, cusName, cusPhoneNumber, cusAddress, cusGmail,"ss");
             data.add(newData);
         }
 

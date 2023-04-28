@@ -31,7 +31,7 @@
                   <TableColumn fx:id="billItemName" prefWidth="177.3333740234375" text="Item Name" />
                   <TableColumn fx:id="bilItemSQTY" prefWidth="164.333251953125" text="QTY" />
                   <TableColumn fx:id="itemsPrice" prefWidth="159.666748046875" text="Price" />
-                  <TableColumn fx:id="itemsPrice1" prefWidth="73.0" />
+                  <TableColumn fx:id="action" prefWidth="73.0" />
                </columns>
             </TableView>
             <AnchorPane fx:id="pay" layoutX="1140.0" layoutY="759.0" prefHeight="62.0" prefWidth="586.0">

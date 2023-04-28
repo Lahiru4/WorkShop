@@ -58,7 +58,7 @@
                </font>
             </JFXButton>
             <DatePicker fx:id="date" layoutX="758.0" layoutY="348.0" prefHeight="33.0" prefWidth="216.0" />
-            <TextField fx:id="empId" layoutX="200.0" layoutY="63.0" prefHeight="33.0" prefWidth="339.0" />
+            <TextField fx:id="empId" editable="false" layoutX="200.0" layoutY="63.0" prefHeight="33.0" prefWidth="339.0" />
          </children>
          <stylesheets>
             <URL value="@../../style/Employee.css" />
