@@ -89,17 +89,37 @@
                      </yAxis>
                   </BarChart>
                   <ComboBox layoutX="667.0" layoutY="89.0" prefHeight="37.0" prefWidth="290.0" />
+                  <AnchorPane layoutX="212.0" layoutY="5.0" prefHeight="601.0" prefWidth="645.0" styleClass="sals">
+                     <effect>
+                        <DropShadow color="#a19e9e" />
+                     </effect>
+                     <children>
+                        <BarChart layoutX="27.0" layoutY="105.0" prefHeight="476.0" prefWidth="586.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                        <AnchorPane layoutX="-2.0" layoutY="-1.0" prefHeight="69.0" prefWidth="649.0" styleClass="hedar">
+                           <children>
+                              <Label layoutX="47.0" layoutY="13.0" styleClass="label2" text="Profit" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
                </children>
                <effect>
                   <DropShadow color="#756e6e" />
                </effect>
             </AnchorPane>
-            <AnchorPane fx:id="sideBarChat" layoutX="83.0" layoutY="3193.0" prefHeight="601.0" prefWidth="859.0">
+            <AnchorPane fx:id="sideBarChat" layoutX="94.0" layoutY="2977.0" prefHeight="629.0" prefWidth="1475.0">
                <effect>
                   <DropShadow color="#a19e9e" />
                </effect>
                <children>
-                  <BarChart layoutX="27.0" layoutY="101.0" prefHeight="480.0" prefWidth="806.0">
+                  <BarChart layoutX="27.0" layoutY="101.0" prefHeight="480.0" prefWidth="1404.0">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -107,10 +127,10 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </BarChart>
-                  <AnchorPane fx:id="employshed" layoutX="1.0" layoutY="-1.0" prefHeight="69.0" prefWidth="862.0">
+                  <AnchorPane fx:id="employshed" layoutX="1.0" layoutY="-1.0" prefHeight="69.0" prefWidth="1474.0">
                      <children>
                         <Label layoutX="47.0" layoutY="13.0" styleClass="label2" text=" Employee Worked" />
-                        <JFXComboBox layoutX="423.0" layoutY="17.0" prefHeight="37.0" prefWidth="304.0" />
+                        <JFXComboBox layoutX="1060.0" layoutY="15.0" prefHeight="37.0" prefWidth="304.0" />
                      </children>
                   </AnchorPane>
                </children>
@@ -151,17 +171,17 @@
                   </BarChart>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="202.0" layoutY="2624.0" prefHeight="718.0" prefWidth="968.0" styleClass="sals">
+            <AnchorPane layoutX="104.0" layoutY="2154.0" prefHeight="718.0" prefWidth="1458.0" styleClass="sals">
                <effect>
                   <DropShadow color="#a19e9e" />
                </effect>
                <children>
-                  <AnchorPane prefHeight="69.0" prefWidth="968.0" styleClass="hedar">
+                  <AnchorPane prefHeight="69.0" prefWidth="1472.0" styleClass="hedar">
                      <children>
                         <Label layoutX="25.0" layoutY="13.0" prefHeight="45.0" prefWidth="198.0" styleClass="label2" text="Customer Base" />
                      </children>
                   </AnchorPane>
-                  <BarChart layoutX="33.0" layoutY="136.0" prefHeight="531.0" prefWidth="902.0">
+                  <BarChart layoutX="33.0" layoutY="136.0" prefHeight="531.0" prefWidth="1366.0">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -169,26 +189,6 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </BarChart>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="1009.0" layoutY="3193.0" prefHeight="601.0" prefWidth="645.0" styleClass="sals">
-               <effect>
-                  <DropShadow color="#a19e9e" />
-               </effect>
-               <children>
-                  <BarChart layoutX="27.0" layoutY="105.0" prefHeight="476.0" prefWidth="586.0">
-                     <xAxis>
-                        <CategoryAxis side="BOTTOM" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis side="LEFT" />
-                     </yAxis>
-                  </BarChart>
-                  <AnchorPane layoutX="-2.0" layoutY="-1.0" prefHeight="69.0" prefWidth="649.0" styleClass="hedar">
-                     <children>
-                        <Label layoutX="47.0" layoutY="13.0" styleClass="label2" text="Profit" />
-                     </children>
-                  </AnchorPane>
                </children>
             </AnchorPane>
             <TableView layoutX="92.0" layoutY="3832.0" prefHeight="872.0" prefWidth="423.0" stylesheets="@../style/Table.css">

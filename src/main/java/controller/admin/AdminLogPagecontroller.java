@@ -22,9 +22,6 @@ public class AdminLogPagecontroller {
         String gmailText = gmail.getText();
         String passwordText = password.getText();
 
-        /*if (gmailText.equals("")){new animatefx.animation.Bounce(gmail).play();}
-        if (passwordText.equals("")){new animatefx.animation.Bounce(password).play();}*/
-
         if (gmailText.equals("Admin") ){
             if (passwordText.equals("1234")){
                 goToDashBoard();
@@ -34,9 +31,6 @@ public class AdminLogPagecontroller {
         }else {
             new Alert(Alert.AlertType.ERROR,"USER !").showAndWait();
         }
-
-
-
     }
 
     private void goToDashBoard() throws IOException {

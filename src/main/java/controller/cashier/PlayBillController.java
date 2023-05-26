@@ -41,6 +41,15 @@ public class PlayBillController {
               JasperPrint jp = JasperFillManager.fillReport(js, hm, DbConnection.getInstance().getConnection());
               JasperViewer viewer = new JasperViewer(jp, false);
               viewer.show();
+
+
+
+              JasperDesign jasDesign = JRXmlLoader.load("src/main/resources/reports/productReport.jrxml");
+              JasperReport jasReport = JasperCompileManager.compileReport(jasDesign);
+
+
+              JasperPrint jasPrint = JasperFillManager.fillReport(js, hm, DbConnection.getInstance().getConnection());
+              JasperViewer.viewReport(jasPrint,false);
           }
         };
 

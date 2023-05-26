@@ -1,7 +1,7 @@
 drop database workshop;
 create database workshop;
 use workshop;
-CREATE TABLE customerTM (
+CREATE TABLE customer (
 	Id VARCHAR(50) PRIMARY KEY,
     name VARCHAR(100),
     number VARCHAR(10),
@@ -42,7 +42,7 @@ CREATE TABLE Employee(
     position ENUM('Admin','Cashier','Manager','Worker')
 );
 CREATE TABLE Admin(
-    Gmail VARCHAR(50)PRIMARY KEY,
+    name VARCHAR(100)PRIMARY KEY,
     password VARCHAR(50)
 );
 CREATE TABLE Supplier(
@@ -61,6 +61,10 @@ CREATE TABLE Items(
     img            mediumblob,
     supplier_id VARCHAR(50),
     CONSTRAINT FOREIGN KEY(supplier_id) REFERENCES Supplier(supplier_id)
+);
+CREATE TABLE Salary(
+    emp_id VARCHAR(50)PRIMARY KEY,
+    salary decimal(8,2)
 );
 
 

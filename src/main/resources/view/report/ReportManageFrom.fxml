@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +15,7 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <JFXButton fx:id="inventory" buttonType="RAISED" contentDisplay="TOP" layoutX="35.0" layoutY="162.0" onAction="#inventoryreportOnAction" prefHeight="142.0" prefWidth="196.0" text="inventory report" textFill="#2e22c7">
+      <JFXButton fx:id="inventory" buttonType="RAISED" contentDisplay="TOP" layoutX="59.0" layoutY="162.0" onAction="#inventoryreportOnAction" prefHeight="142.0" prefWidth="450.0" text="inventory report" textFill="#2e22c7">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,7 +27,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="empReport" buttonType="RAISED" contentDisplay="TOP" layoutX="33.0" layoutY="353.0" onAction="#empReportOnAction" prefHeight="142.0" prefWidth="196.0" text="Employee report" textFill="#2e22c7">
+      <JFXButton fx:id="empReport" buttonType="RAISED" contentDisplay="TOP" layoutX="626.0" layoutY="163.0" onAction="#empReportOnAction" prefHeight="142.0" prefWidth="450.0" text="Employee report" textFill="#2e22c7">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -39,24 +39,7 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <ScrollPane layoutX="266.0" layoutY="164.0" prefHeight="853.0" prefWidth="1440.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="953.0" prefWidth="1423.0" />
-        </content>
-      </ScrollPane>
-      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="38.0" layoutY="520.0" prefHeight="142.0" prefWidth="196.0" text="Sales Report" textFill="#2e22c7">
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../img/icons8-total-sales-48.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="20.0" />
-         </font>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="43.0" layoutY="711.0" prefHeight="142.0" prefWidth="196.0" text="Customer report" textFill="#2e22c7">
+      <JFXButton fx:id="cusReportbtn" buttonType="RAISED" contentDisplay="TOP" layoutX="1177.0" layoutY="164.0" prefHeight="142.0" prefWidth="450.0" text="Customer report" textFill="#2e22c7">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -68,5 +51,10 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
+      <JFXTextArea labelFloat="true" layoutX="63.0" layoutY="374.0" prefHeight="560.0" prefWidth="1551.0" text="Certainly! A report is an official document that presents information and findings on a particular topic or issue. Reports can be used in a variety of contexts, including academic, business, and government settings, among others. Here are some reasons why reports are important:&#10;&#10;Communication: Reports are an effective way to communicate information to a specific audience, whether it be stakeholders, customers, or decision-makers. A well-written report can provide a clear and concise summary of important data, helping the reader understand complex issues and make informed decisions.&#10;&#10;Documentation: Reports provide a record of information that can be referred to in the future. This is particularly important in business and government settings, where decisions may need to be justified or evaluated at a later time.&#10;&#10;Accountability: Reports can be used to hold individuals or organizations accountable for their actions. For example, a safety report can help identify risks and prevent accidents in the workplace.&#10;&#10;Planning: Reports can be used to plan for the future. For example, a market research report can help a business develop strategies for entering a new market.&#10;&#10;Evaluation: Reports can be used to evaluate the effectiveness of policies, programs, or initiatives. This can help identify areas for improvement and make data-driven decisions.&#10;&#10;Overall, reports are an essential tool for communicating, documenting, and evaluating information in a variety of contexts." unFocusColor="#b23434">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextArea>
    </children>
 </AnchorPane>

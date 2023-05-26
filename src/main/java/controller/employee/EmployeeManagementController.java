@@ -210,4 +210,8 @@ public class EmployeeManagementController {
         }
 
     }
+
+    public void employSalaryOnAction(ActionEvent actionEvent) {
+
+    }
 }

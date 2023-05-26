@@ -2,6 +2,7 @@ package controller.cashier;
 
 import com.jfoenix.controls.JFXButton;
 import controller.barcodeReade.BarcodeReadController;
+import controller.order.AddOdercontroller;
 import dto.Order;
 import dto.tm.ItemTM2;
 import dto.tm.ItemsTM;
@@ -176,6 +177,11 @@ public class ControllerItems {
 
     public void playBillOnAction(MouseEvent mouseEvent) throws IOException {
         if (selected) {
+            //
+            AddOdercontroller.setBillTableData(billTableData);
+
+
+
             Stage stage = new Stage();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order/AddOder.fxml"))));
             stage.initModality(Modality.APPLICATION_MODAL);

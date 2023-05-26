@@ -16,7 +16,7 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Label>
-      <TableView fx:id="stockTable" layoutX="52.0" layoutY="266.0" prefHeight="711.0" prefWidth="1607.0" stylesheets="@../../style/MainTable.css">
+      <TableView fx:id="stockTable" layoutX="52.0" layoutY="266.0" onMouseClicked="#itemUpletOnAction" prefHeight="711.0" prefWidth="1607.0" stylesheets="@../../style/MainTable.css">
         <columns>
           <TableColumn fx:id="code" prefWidth="178.0000457763672" text="Items Code" />
           <TableColumn fx:id="description" prefWidth="330.6666564941406" text="Description" />

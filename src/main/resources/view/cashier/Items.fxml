@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,7 +25,7 @@
                   </JFXButton>
                </children></AnchorPane>
             <JFXComboBox layoutX="36.0" layoutY="102.0" prefHeight="31.0" prefWidth="295.0" />
-            <TableView fx:id="billTable" layoutX="1140.0" layoutY="69.0" prefHeight="674.0" prefWidth="590.0" stylesheets="@../../style/MainTable.css">
+            <TableView fx:id="billTable" layoutX="1140.0" layoutY="69.0" prefHeight="728.0" prefWidth="590.0" stylesheets="@../../style/MainTable.css">
                <columns>
                   <TableColumn fx:id="billItemName" prefWidth="177.3333740234375" text="Item Name" />
                   <TableColumn fx:id="bilItemSQTY" prefWidth="164.333251953125" text="QTY" />
@@ -34,7 +33,7 @@
                   <TableColumn fx:id="action" prefWidth="73.0" />
                </columns>
             </TableView>
-            <AnchorPane fx:id="pay" layoutX="1140.0" layoutY="759.0" prefHeight="62.0" prefWidth="586.0">
+            <AnchorPane fx:id="pay" layoutX="1140.0" layoutY="838.0" prefHeight="62.0" prefWidth="586.0">
                <children>
                   <Label layoutX="19.0" layoutY="2.0" prefHeight="60.0" prefWidth="70.0" text="PAY">
                      <font>
@@ -56,8 +55,8 @@
                   <TableColumn fx:id="qty" prefWidth="164.33331298828125" />
                </columns>
             </TableView>
-            <RadioButton fx:id="project" layoutX="1160.0" layoutY="871.0" mnemonicParsing="false" onAction="#projectOnAction" text="Project" />
-            <JFXButton fx:id="paySalls" buttonType="RAISED" layoutX="1278.0" layoutY="957.0" onMouseClicked="#playBillOnAction" prefHeight="48.0" prefWidth="440.0" text="Pay" textFill="WHITE">
+            <RadioButton fx:id="project" layoutX="1160.0" layoutY="950.0" mnemonicParsing="false" onAction="#projectOnAction" text="Project" />
+            <JFXButton fx:id="paySalls" buttonType="RAISED" layoutX="1278.0" layoutY="942.0" onMouseClicked="#playBillOnAction" prefHeight="48.0" prefWidth="440.0" text="Pay" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -69,11 +68,6 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <TextField layoutX="1278.0" layoutY="859.0" prefHeight="48.0" prefWidth="440.0" stylesheets="@../../style/TexFeld.css">
-               <effect>
-                  <DropShadow color="#b5a5a5" />
-               </effect>
-            </TextField>
          </children>
       </AnchorPane>
    </children>

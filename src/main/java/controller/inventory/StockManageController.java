@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -34,6 +35,7 @@ public class StockManageController {
     public TableColumn sellingPrice;
     public TableColumn supplierId;
     public TableColumn action;
+    public List<ItemsTM> all;
     ObservableList<StockTM> data= FXCollections.observableArrayList();
     public void initialize(){
         setCellValueFactory();
@@ -44,7 +46,7 @@ public class StockManageController {
         try {
 
 
-            List<ItemsTM> all = ItemsModel.getAll();
+            all= ItemsModel.getAll();
             for (ItemsTM temp:all){
                 Image img=new Image("/img/icons8-delete-100.png");
                 ImageView imageView=new ImageView(img);
@@ -115,5 +117,13 @@ public class StockManageController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(stockManage.getScene().getWindow());
         stage.show();
+    }
+
+    public void itemUpletOnAction(MouseEvent mouseEvent) {
+        int selectedIndex = stockTable.getSelectionModel().getSelectedIndex();
+
+
+
+
     }
 }

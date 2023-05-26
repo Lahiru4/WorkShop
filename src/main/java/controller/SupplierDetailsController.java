@@ -5,6 +5,7 @@ import dto.Supplier;
 import dto.tm.SupplierTm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -66,5 +67,9 @@ public class SupplierDetailsController implements Initializable {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void addSupOnAction(ActionEvent actionEvent) {
+
     }
 }

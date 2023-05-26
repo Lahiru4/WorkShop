@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,6 +22,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class AddInventoryController {
@@ -42,11 +44,14 @@ public class AddInventoryController {
     public TextField supnumber;
     public TextField supGmail;
     public ImageView barCodeImageView;
+    public Label date;
     ObservableList<String> comData= FXCollections.observableArrayList();
     List<Supplier> all;
 
     public void initialize(){
-        supplierIdComBoxsetData();setItemCode();
+        supplierIdComBoxsetData();
+        setItemCode();
+        date.setText(String.valueOf(LocalDate.now()));
 
     }
 
@@ -105,7 +110,12 @@ public class AddInventoryController {
     }
 
     public void supplierIdComBoxOnAction(ActionEvent actionEvent) {
-
+        int selectedIndex = supplierIdComBox.getSelectionModel().getSelectedIndex();
+        Supplier supplier = all.get(selectedIndex);
+        supnumber.setText(supplier.getNumber());
+        supName.setText(supplier.getName());
+        supAddress.setText(supplier.getAddress());
+        supGmail.setText(supplier.getGmail());
     }
 
     public void generateBarcodebtnOnAction(ActionEvent actionEvent) {
@@ -114,7 +124,6 @@ public class AddInventoryController {
         }else {
             setBarcodeImg();
         }
-
     }
     private String genOrderId() throws SQLException, ClassNotFoundException {
         String lastId = ItemsModel.itemsGetLastCode();
@@ -127,7 +136,6 @@ public class AddInventoryController {
             i++;
             id = String.format("1234%04d",i);
         }
-
         return id;
     }
     public void setItemCode(){

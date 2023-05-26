@@ -1,9 +1,12 @@
 package controller.order;
 
+import dto.Order;
 import dto.OrderCustomerQuotationJoinDto;
+import dto.tm.OrderTM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -16,10 +19,12 @@ import util.ViewFactory;
 import util.types.SceneTypes;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class OrderdashboardformController {
+public class OrderdashboardformController implements Initializable {
     public TableColumn<OrderCustomerQuotationJoinDto,String> qID;
     public TableColumn<?,?> workRent;
     public TableColumn<?,?> itemCost;
@@ -29,48 +34,41 @@ public class OrderdashboardformController {
     public TableColumn<?,?> orderID;
     public TableView orderTable;
     public AnchorPane oderDashboard;
-    public void initialize(){
-        getAll();
-        setCellValueFactory();
-    }
+
     private void getAll() {
         try {
-            List<OrderCustomerQuotationJoinDto> all = QueryModel.getAll();
-            ObservableList<OrderCustomerQuotationJoinDto> obList = FXCollections.observableArrayList();
+            List<Order> all = QueryModel.getAll();
+            ObservableList<OrderTM> obList = FXCollections.observableArrayList();
 
-            for(OrderCustomerQuotationJoinDto order : all) {
-                obList.add(new OrderCustomerQuotationJoinDto(
-                        order.getOrderId(),
-                        order.getOrderDescription(),
-                        order.getOrderDate(),
-                        order.getReturnOrderDate(),
-                        order.getWorkRent(),
-                        order.getItemCost(),
-                        order.getCusId(),
-                        order.getCusName(),
-                        order.getCusPhoneNumber(),
-                        order.getCusAddress(),
-                        order.getCusGmail(),
-                        "SS002"
+            for(Order order : all) {
+                obList.add(new OrderTM(order.getId(),order.getOrder_date(),order.getReturn_date(),order.getWork_rent(),order.getItem_cost(),order.getCustomer_Id(),"S001"));
 
-                ));
-                //sup
             }
             orderTable.setItems(obList);
+            orderTable.refresh();
         } catch (SQLException e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR,"SQL ERROR").show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
     private void setCellValueFactory() {
-        orderID.setCellValueFactory(new PropertyValueFactory<>("orderId"));
-        cusID.setCellValueFactory(new PropertyValueFactory<>("cusId"));
-        placeDate.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
-        returnDate.setCellValueFactory(new PropertyValueFactory<>("returnOrderDate"));
-        itemCost.setCellValueFactory(new PropertyValueFactory<>("itemCost"));
-        workRent.setCellValueFactory(new PropertyValueFactory<>("workRent"));
+        orderID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        cusID.setCellValueFactory(new PropertyValueFactory<>("customer_Id"));
+        placeDate.setCellValueFactory(new PropertyValueFactory<>("order_date"));
+        returnDate.setCellValueFactory(new PropertyValueFactory<>("work_rent"));
+        itemCost.setCellValueFactory(new PropertyValueFactory<>("item_cost"));
+        workRent.setCellValueFactory(new PropertyValueFactory<>("work_rent"));
         qID.setCellValueFactory(new PropertyValueFactory<>("qID"));
+        /*private String id;
+        private String description;
+        private String order_date;
+        private String return_date;
+        private double work_rent;
+        private double item_cost;
+        private String customer_Id;*/
     }
     public void addOrderOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
@@ -86,5 +84,11 @@ public class OrderdashboardformController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(oderDashboard.getScene().getWindow());
         stage.showAndWait();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setCellValueFactory();
+        getAll();
     }
 }

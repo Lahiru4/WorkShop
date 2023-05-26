@@ -59,7 +59,7 @@ public class ViewFactory {
         logingPageController = fxmlLoader5.getController();
         loginPageScene = new Scene(loginPage);
 
-        FXMLLoader fxmlLoader6 = new FXMLLoader(getClass().getResource("../view/cashier/Items.fxml"));
+        FXMLLoader fxmlLoader6 = new FXMLLoader(getClass().getResource("/view/cashier/Items.fxml"));
         addOrderpage = fxmlLoader6.load();
         addOdercontroller = fxmlLoader6.getController();
         addOrderScene = new Scene(addOrderpage);

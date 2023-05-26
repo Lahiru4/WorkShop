@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="639.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierDetailsController">
+<AnchorPane prefHeight="639.0" prefWidth="1109.0" stylesheets="@../../style/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierDetailsController">
    <children>
-      <TableView fx:id="supData" layoutX="50.0" layoutY="89.0" prefHeight="502.0" prefWidth="985.0" stylesheets="@../../style/Table.css">
+      <TableView fx:id="supData" layoutX="50.0" layoutY="121.0" prefHeight="470.0" prefWidth="985.0" stylesheets="@../../style/Table.css">
         <columns>
           <TableColumn fx:id="supId" prefWidth="153.0" text="supplier id" />
           <TableColumn fx:id="name" prefWidth="112.0" text="name" />
@@ -16,5 +20,17 @@
             <TableColumn fx:id="btn" minWidth="0.0" prefWidth="75.0" />
         </columns>
       </TableView>
+      <JFXButton fx:id="addSup" buttonType="RAISED" layoutX="62.0" layoutY="28.0" onAction="#addSupOnAction" prefHeight="38.0" prefWidth="213.0" text="Add Supplier">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/icons8-add-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
